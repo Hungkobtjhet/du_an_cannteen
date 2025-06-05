@@ -101,7 +101,7 @@
                         <h1>Menu</h1>
                     </div>
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('home') }}">Trang chủ</a></li>
                         <li class="breadcrumb-item active">Our Menu</li>
                     </ol>
                 </div>
