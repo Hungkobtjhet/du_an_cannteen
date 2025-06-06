@@ -157,9 +157,9 @@
                         <div class="row">
                             <div class="col-lg-7 col-md-12 col-sm-12">
                                 <div class="banner_content2 text_white">
-                                    <h2 class="staggered-animation" data-animation="fadeInUp" data-animation-delay="0.2s">Tasty African Delights</h2>
-                                    <p class="staggered-animation" data-animation="fadeInUp" data-animation-delay="0.4s">Experience the vibrant flavors of Africa with dishes crafted to perfection. <br class="d-none d-md-block" /> Each bite takes you closer to tradition and joy.</p>
-                                    <a class="btn btn-default rounded-0 staggered-animation" href="{{ route('menu') }}" data-animation="fadeInUp" data-animation-delay="0.6s">Order Online</a>
+                                    <h2 class="staggered-animation" data-animation="fadeInUp" data-animation-delay="0.2s">Món ngon Việt Nam </h2>
+                                    <p class="staggered-animation" data-animation="fadeInUp" data-animation-delay="0.4s">Trải nghiệm hương vị sống động với những món ăn được chế biến hoàn hảo. <br class="d-none d-md-block" />Mỗi miếng cắn đưa bạn đến gần hơn với truyền thống và niềm vui.</p>
+                                    <a class="btn btn-default rounded-0 staggered-animation" href="{{ route('menu') }}" data-animation="fadeInUp" data-animation-delay="0.6s">Đặt hàng trực tuyến</a>
                                 </div>
                             </div>
                         </div>
@@ -172,10 +172,10 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-7 col-md-12 col-sm-12 text-center">
                                 <div class="banner_content2 text_white">
-                                    <h2 class="staggered-animation" data-animation="fadeInUp" data-animation-delay="0.2s">Choose & Savor</h2>
-                                    <p class="staggered-animation" data-animation="fadeInUp" data-animation-delay="0.4s">Indulge in suya and other mouthwatering dishes, infused with authentic spices <br class="d-none d-md-block" /> and crafted to delight your taste buds.</p>
-                                    <a class="btn btn-default rounded-0 staggered-animation" href="{{ route('menu') }}" data-animation="fadeInUp" data-animation-delay="0.6s">Order Online</a>
-                                    <a class="btn btn-white rounded-0 staggered-animation" href="{{ route('contact') }}" data-animation="fadeInUp" data-animation-delay="0.6s">Contact Us</a>
+                                    <h2 class="staggered-animation" data-animation="fadeInUp" data-animation-delay="0.2s">Chọn & Thưởng thức</h2>
+                                    <p class="staggered-animation" data-animation="fadeInUp" data-animation-delay="0.4s">Thưởng thức và các món ăn hấp dẫn khác, được tẩm ướp với gia vị đích thực <br class="d-none d-md-block" /> and crafted to delight your taste buds.</p>
+                                    <a class="btn btn-default rounded-0 staggered-animation" href="{{ route('menu') }}" data-animation="fadeInUp" data-animation-delay="0.6s">Đặt hàng trực tuyến</a>
+                                    <a class="btn btn-white rounded-0 staggered-animation" href="{{ route('contact') }}" data-animation="fadeInUp" data-animation-delay="0.6s">Liên hệ với chúng tôi</a>
                                 </div>
                             </div>
                         </div>
@@ -188,11 +188,11 @@
                         <div class="row justify-content-md-end">
                             <div class="col-lg-6 col-md-12 col-sm-12">
                                 <div class="banner_content2 text_white">
-                                    <h4 class="staggered-animation text_default" data-animation="fadeInUp" data-animation-delay="0.2s">Are You Ready</h4>
-                                    <h2 class="staggered-animation" data-animation="fadeInUp" data-animation-delay="0.2s">Enjoy Every Bite</h2>
-                                    <p class="staggered-animation" data-animation="fadeInUp" data-animation-delay="0.4s">From sizzling suya to hearty stews, enjoy African dishes made to bring joy <br class="d-none d-md-block" /> to every occasion and appetite.</p>
-                                    <a class="btn btn-default rounded-0 staggered-animation" href="{{ route('menu') }}" data-animation="fadeInUp" data-animation-delay="0.6s">Order Online</a>
-                                    <a class="btn btn-white rounded-0 staggered-animation" href="{{ route('contact') }}" data-animation="fadeInUp" data-animation-delay="0.6s">Contact Us</a>
+                                    <h4 class="staggered-animation text_default" data-animation="fadeInUp" data-animation-delay="0.2s">Bạn đã sẵn sàng chưa</h4>
+                                    <h2 class="staggered-animation" data-animation="fadeInUp" data-animation-delay="0.2s">Thưởng thức từng miếng ăn</h2>
+                                    <p class="staggered-animation" data-animation="fadeInUp" data-animation-delay="0.4s">Từ món nóng hổi đến món hầm thịnh soạn, hãy thưởng thức các món ăn châu Phi được chế biến để mang lại niềm vui <br class="d-none d-md-block" /> cho mọi dịp và khẩu vị.</p>
+                                    <a class="btn btn-default rounded-0 staggered-animation" href="{{ route('menu') }}" data-animation="fadeInUp" data-animation-delay="0.6s">Đặt hàng trực tuyến</a>
+                                    <a class="btn btn-white rounded-0 staggered-animation" href="{{ route('contact') }}" data-animation="fadeInUp" data-animation-delay="0.6s">Liên hệ với chúng tôi</a>
                                 </div>
                             </div>
                         </div>
@@ -215,8 +215,8 @@
             <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-8">
                     <div class="heading_s1 animation text-center" data-animation="fadeInUp" data-animation-delay="0.02s">
-                        <div class="sub_heading font_style1">Special Food</div>
-                        <h2>from Our Menu</h2>
+                        <div class="sub_heading font_style1">Thức ăn đặc biệt</div>
+                        <h2>từ Thực đơn của chúng tôi</h2>
                     </div>
                     <div class="small_divider clearfix"></div>
                 </div>
@@ -247,7 +247,7 @@
                         </div>
                         
                         @empty
-                        <b> No Menu available. </b>
+                        <b>Không có Menu nào khả dụng.</b>
                         @endforelse                       
 
     
@@ -268,11 +268,11 @@
         <div class="row justify-content-center">
             <div class="col-xl-6 col-lg-7 col-md-9 animation text-center" data-animation="fadeInUp" data-animation-delay="0.02s">
                 <div class="heading_s1 heading_light">
-                    <span class="sub_heading font_style1">Experience True Flavor</span>
-                    <h2>Where Meals Bring Us Together</h2>
+                    <span class="sub_heading font_style1">Trải nghiệm hương vị đích thực</span>
+                    <h2>Nơi bữa ăn đưa chúng ta lại gần nhau</h2>
                 </div>
-                <p class="text-white">Celebrate the joy of dining with authentic African dishes, crafted to bring families and friends closer with every bite.</p>
-                <a class="btn btn-white rounded-0" href="{{ route('menu') }}">Order Now</a>
+                <p class="text-white">Tận hưởng niềm vui ẩm thực với các món ăn đích thực, được chế biến để gắn kết gia đình và bạn bè lại gần nhau hơn sau mỗi món ăn.</p>
+                <a class="btn btn-white rounded-0" href="{{ route('menu') }}">Đặt hàng ngay</a>
                 <div class="large_divider clearfix"></div>
             </div>
         </div>
@@ -292,8 +292,8 @@
                                 <div class="book_table">
                                     <div class="medium_divider clearfix"></div>
                                     <div class="heading_s1 mb-md-0">
-                                        <span class="sub_heading font_style1">Reservations</span>
-                                        <h2>Book A Table</h2>
+                                        <span class="sub_heading font_style1">Đặt chỗ</span>
+                                        <h2>Đặt bàn</h2>
                                     </div>
                                     <div class="small_divider clearfix"></div>
                                     <div class="field_form form_style1">
@@ -302,7 +302,7 @@
                                             <div class="row">
                                                 <div class="form-group col-md-6">
                                                     <div class="input_group">
-                                                        <input required="required" placeholder="Name" class="form-control rounded-0" name="name" type="text">
+                                                        <input required="required" placeholder="Tên" class="form-control rounded-0" name="name" type="text">
                                                         <div class="input_icon">
                                                             <i class="fa fa-user"></i>
                                                         </div>
@@ -310,7 +310,7 @@
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <div class="input_group">
-                                                        <input required="required" placeholder="Email Address" class="form-control rounded-0" name="email" type="email">
+                                                        <input required="required" placeholder="Email " class="form-control rounded-0" name="email" type="email">
                                                         <div class="input_icon">
                                                             <i class="fa fa-envelope"></i>
                                                         </div>
@@ -318,7 +318,7 @@
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <div class="input_group">
-                                                        <input placeholder="Time" class="form-control rounded-0 timepicker" data-theme="red" name="time" type="text">
+                                                        <input placeholder="Thời gian" class="form-control rounded-0 timepicker" data-theme="red" name="time" type="text">
                                                         <div class="input_icon">
                                                             <i class="far fa-clock"></i>
                                                         </div>
@@ -326,7 +326,7 @@
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <div class="input_group">
-                                                        <input required="required" placeholder="Mobile No." class="form-control rounded-0" name="phone" type="tel">
+                                                        <input required="required" placeholder="Số di động." class="form-control rounded-0" name="phone" type="tel">
                                                         <div class="input_icon">
                                                             <i class="ti-mobile"></i>
                                                         </div>
@@ -334,7 +334,7 @@
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <div class="input_group">
-                                                        <input placeholder="Select Date" class="form-control rounded-0 datepicker" name="date" type="text">
+                                                        <input placeholder="Chọn ngày" class="form-control rounded-0 datepicker" name="date" type="text">
                                                         <div class="input_icon">
                                                             <i class="far fa-calendar-alt"></i>
                                                         </div>
@@ -343,20 +343,20 @@
                                                 <div class="form-group col-md-6">
                                                     <div class="custom_select">
                                                         <select class="form-control rounded-0" name="persons">
-                                                            <option value="">Select Person</option>
-                                                            <option value="1">1 Person</option>
-                                                            <option value="2">2 Persons</option>
-                                                            <option value="3">3 Persons</option>
-                                                            <option value="4">4 Persons</option>
-                                                            <option value="5">5 Persons</option>
-                                                            <option value="6">6 Persons</option>
-                                                            <option value="7">7 Persons</option>
-                                                            <option value="8">8 Persons</option>
+                                                            <option value="">Số Người</option>
+                                                            <option value="1">1 Người</option>
+                                                            <option value="2">2 Người</option>
+                                                            <option value="3">3 Người</option>
+                                                            <option value="4">4 Người</option>
+                                                            <option value="5">5 Người</option>
+                                                            <option value="6">6 Người</option>
+                                                            <option value="7">7 Người</option>
+                                                            <option value="8">8 Người</option>
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12">
-                                                    <button type="submit" title="Submit Your Message!" class="btn btn-default rounded-0" name="submit" value="Submit">Book Now</button>
+                                                    <button type="submit" title="Submit Your Message!" class="btn btn-default rounded-0" name="submit" value="Submit">Đặt ngay</button>
                                                 </div>
                                             </div>
                                         </form>
@@ -385,10 +385,10 @@
         <div class="row justify-content-center">
             <div class="col-lg-6 col-md-8 animation" data-animation="fadeInUp" data-animation-delay="0.02s">
                 <div class="heading_s1 text-center">
-                    <span class="sub_heading font_style1">Testimonial</span>
-                    <h2>Our Customers Say!</h2>
+                    <span class="sub_heading font_style1">Lời chứng thực</span>
+                    <h2>Khách hàng của chúng tôi nói!</h2>
                 </div>
-                <p class="text-center leads">Hear what our happy customers have to say about their experience with us.</p>
+                <p class="text-center leads">Hãy lắng nghe những khách hàng hài lòng nói về trải nghiệm của họ khi sử dụng dịch vụ của chúng tôi.</p>
             </div>
         </div>
         <div class="row justify-content-center">
@@ -424,10 +424,10 @@
         <div class="row justify-content-center">
             <div class="col-lg-6 col-md-8 animation" data-animation="fadeInUp" data-animation-delay="0.2s">
                 <div class="heading_s1 text-center">
-                    <span class="sub_heading font_style1">From The Blog</span>
-                    <h2>Our Latest News</h2>
+                    <span class="sub_heading font_style1">Từ Blog</span>
+                    <h2>Tin tức mới nhất của chúng tôi</h2>
                 </div>
-                <p class="text-center leads">Explore the stories behind our rich African flavors, our passion for suya, and the art of charcoal grilling.</p>
+                <p class="text-center leads">Khám phá những câu chuyện đằng sau hương vị châu Phi phong phú, niềm đam mê của chúng tôi đối với suya và nghệ thuật nướng than.</p>
             </div>
         </div>
         <div class="row justify-content-center">
