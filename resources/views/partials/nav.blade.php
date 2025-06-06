@@ -10,11 +10,11 @@
         <ul class="navbar-nav">
             <li>  <a href="{{ route('home') }}" class="nav-link {{ Request::routeIs('home') ? 'active' : '' }}">Trang chủ</a> </li>
             <li>  <a href="{{ route('menu') }}" class="nav-link {{ Request::is('menu*') ? 'active' : '' }}">Thực đơn</a> </li>
-            <li>  <a href="{{ route('blogs') }}" class="nav-link {{ Request::is('blog*') ? 'active' : '' }}">Blogs</a> </li>
-            <li>  <a href="{{ route('about') }}" class="nav-link {{ Request::routeIs('about') ? 'active' : '' }}">Giới thiệuthiệu</a> </li>
+            <li>  <a href="{{ route('blogs') }}" class="nav-link {{ Request::is('blog*') ? 'active' : '' }}">Tìm kiếm</a> </li>
+            <li>  <a href="{{ route('about') }}" class="nav-link {{ Request::routeIs('about') ? 'active' : '' }}">Giới thiệu</a> </li>
             <li> <a href="{{ route('contact') }}" class="nav-link {{ Request::routeIs('contact') ? 'active' : '' }}">Liên hệ</a> </li>
             @if (Auth::check())
-                <li> <a href="{{ route('admin.index') }}" class="nav-link">Bảng điều khiển quản trị</a> </li>
+                <li> <a href="{{ route('admin.index') }}" class="nav-link"> Quản trị</a> </li>
                 <li> <a  data-bs-toggle="modal" data-bs-target="#logoutModal" href="#" class="nav-link">Đăng xuất</a> </li>
             @endif
 
@@ -27,7 +27,7 @@
     </ul>
     @if($firstRestaurantPhoneNumber)  
     <div class="header_btn d-sm-block d-none">
-        <a href="tel:{{ $firstRestaurantPhoneNumber->phone_number }}" class="btn btn-default rounded-0 ml-2 btn-sm"><i class="fa fa-phone"></i> CALL US</a>
+        <a href="tel:{{ $firstRestaurantPhoneNumber->phone_number }}" class="btn btn-default rounded-0 ml-2 btn-sm"><i class="fa fa-phone"></i> GỌI CHO CHÚNG TÔI</a>
     </div>  
     @endif
 
