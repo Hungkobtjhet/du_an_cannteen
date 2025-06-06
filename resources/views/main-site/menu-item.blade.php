@@ -107,11 +107,11 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="page-title">
-            		<h1>Product Detail</h1>
+            		<h1>Chi tiết sản phẩm</h1>
                 </div>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                    <li class="breadcrumb-item active">Product Detail</li>
+                    <li class="breadcrumb-item"><a href="{{ route('home') }}">Trang chủ</a></li>
+                    <li class="breadcrumb-item active">Chi tiết sản phẩm</li>
                 </ol>
             </div>
         </div>
@@ -173,7 +173,7 @@
                     </div>
                     <hr />
                     <div class="product_share">
-                        <span>Share:</span>
+                        <span>Chia sẻ:</span>
                         <ul class="social_icons">
                             <!-- Facebook Share -->
                             <li>
@@ -216,7 +216,7 @@
         <div class="row">
         	<div class="col-12">
             	<div class="heading_s1">
-                	<h3>Releted</h3>
+                	<h3>Có liên quan</h3>
                 </div>
             	<div class="releted_product_slider carousel_slider owl-carousel owl-theme" data-margin="10" data-responsive='{"0":{"items": "1"}, "575":{"items": "2"}, "991":{"items": "3"}, "1199":{"items": "4"}}'>
 
@@ -237,7 +237,7 @@
                                 </div>
                             </div>
                         @empty
-                            <p>No related menus found.</p>
+                            <p>Không tìm thấy menu liên quan.</p>
                         @endforelse
                      
                 </div>
