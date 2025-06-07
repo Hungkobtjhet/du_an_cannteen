@@ -173,7 +173,7 @@
                             <div class="col-lg-7 col-md-12 col-sm-12 text-center">
                                 <div class="banner_content2 text_white">
                                     <h2 class="staggered-animation" data-animation="fadeInUp" data-animation-delay="0.2s">Chọn & Thưởng thức</h2>
-                                    <p class="staggered-animation" data-animation="fadeInUp" data-animation-delay="0.4s">Thưởng thức và các món ăn hấp dẫn khác, được tẩm ướp với gia vị đích thực <br class="d-none d-md-block" /> and crafted to delight your taste buds.</p>
+                                    <p class="staggered-animation" data-animation="fadeInUp" data-animation-delay="0.4s">Thưởng thức và các món ăn hấp dẫn khác, được tẩm ướp với gia vị đích thực <br class="d-none d-md-block" /> và được chế tác để làm hài lòng vị giác của bạn.</p>
                                     <a class="btn btn-default rounded-0 staggered-animation" href="{{ route('menu') }}" data-animation="fadeInUp" data-animation-delay="0.6s">Đặt hàng trực tuyến</a>
                                     <a class="btn btn-white rounded-0 staggered-animation" href="{{ route('contact') }}" data-animation="fadeInUp" data-animation-delay="0.6s">Liên hệ với chúng tôi</a>
                                 </div>
@@ -190,7 +190,7 @@
                                 <div class="banner_content2 text_white">
                                     <h4 class="staggered-animation text_default" data-animation="fadeInUp" data-animation-delay="0.2s">Bạn đã sẵn sàng chưa</h4>
                                     <h2 class="staggered-animation" data-animation="fadeInUp" data-animation-delay="0.2s">Thưởng thức từng miếng ăn</h2>
-                                    <p class="staggered-animation" data-animation="fadeInUp" data-animation-delay="0.4s">Từ món nóng hổi đến món hầm thịnh soạn, hãy thưởng thức các món ăn châu Phi được chế biến để mang lại niềm vui <br class="d-none d-md-block" /> cho mọi dịp và khẩu vị.</p>
+                                    <p class="staggered-animation" data-animation="fadeInUp" data-animation-delay="0.4s">Từ món nóng hổi đến món hầm thịnh soạn, hãy thưởng thức các món ăn được chế biến để mang lại niềm vui <br class="d-none d-md-block" /> cho mọi dịp và khẩu vị.</p>
                                     <a class="btn btn-default rounded-0 staggered-animation" href="{{ route('menu') }}" data-animation="fadeInUp" data-animation-delay="0.6s">Đặt hàng trực tuyến</a>
                                     <a class="btn btn-white rounded-0 staggered-animation" href="{{ route('contact') }}" data-animation="fadeInUp" data-animation-delay="0.6s">Liên hệ với chúng tôi</a>
                                 </div>
@@ -427,7 +427,7 @@
                     <span class="sub_heading font_style1">Từ Blog</span>
                     <h2>Tin tức mới nhất của chúng tôi</h2>
                 </div>
-                <p class="text-center leads">Khám phá những câu chuyện đằng sau hương vị châu Phi phong phú, niềm đam mê của chúng tôi đối với suya và nghệ thuật nướng than.</p>
+                <p class="text-center leads">Khám phá những câu chuyện đằng sau hương vị châu Phi phong phú, niềm đam mê của chúng tôi và nghệ thuật.</p>
             </div>
         </div>
         <div class="row justify-content-center">
@@ -456,7 +456,7 @@
                         </div>
                     </div>
                 @empty
-                    <p>No blogs found.</p>
+                    <p>Không tìm thấy blog nào.</p>
                 @endforelse
           
             
