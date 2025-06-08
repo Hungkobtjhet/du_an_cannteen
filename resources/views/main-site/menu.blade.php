@@ -139,7 +139,7 @@
                   {{ $categories->sum(fn($category) => $category->menus->count()) === 1 ? 'result' : 'results' }} 
                   cho truy vấn của bạn: <em>"{{ request('search') }}"</em>.
                   <hr/>
-                  <a href="{{ route('menu') }}" class="btn-sm btn btn-light">Return to menu</a>
+                  <a href="{{ route('menu') }}" class="btn-sm btn btn-light">Quay lại </a>
               </div>
           @endif
               

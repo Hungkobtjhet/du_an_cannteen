@@ -90,8 +90,8 @@
                 <table class="table table-bordered data-table" id="orders-table">
                     <thead>
                         <tr>
-                            <th>Order No.</th>
-                            <th>Date</th>
+                            <th>Số thứ tự</th>
+                            <th>Ngày</th>
                             <th>Total Price</th>
                             <th>Status</th>
                             <th>Order Type</th>

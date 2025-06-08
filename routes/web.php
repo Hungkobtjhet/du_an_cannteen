@@ -20,6 +20,10 @@ use App\Http\Controllers\Admin\PrivacyPolicyController;
 use App\Http\Controllers\Admin\GeneralSettingsController;
 use App\Http\Controllers\Admin\TermsAndConditionController;
 use App\Http\Controllers\Admin\TableBookingController as AdminTableBookingController;
+use App\Http\Controllers\AIStaticController;
+
+Route::get('/ai-chat-basic', [AIStaticController::class, 'index'])->name('ai.chat.basic');
+Route::post('/ai-chat-basic', [AIStaticController::class, 'chat']);
 
 
 Route::get('/', [MainSiteController::class, 'home'])->name('home');
@@ -202,4 +206,3 @@ Route::prefix('admin')->middleware(RedirectIfNotAdmin::class)->group(function ()
         
 });
 
- 

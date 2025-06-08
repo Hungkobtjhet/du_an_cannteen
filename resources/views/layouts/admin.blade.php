@@ -27,7 +27,7 @@
  
           <ul class="navbar-nav navbar-nav-right">
             <li class="nav-item d-none d-lg-flex  mr-2">  <a class="nav-link" href="{{ route('admin.view.myprofile') }}"> <i class="typcn typcn-user-outline mr-0"></i> {{ $loggedInUser->first_name }}  </a> </li>
-            <li class="nav-item d-none d-lg-flex  mr-2">  <a class="nav-link" href="{{ route('admin.logout') }}"> <i class="typcn typcn-power-outline mr-0"></i> Logout  </a> </li>
+            <li class="nav-item d-none d-lg-flex  mr-2">  <a class="nav-link" href="{{ route('admin.logout') }}"> <i class="typcn typcn-power-outline mr-0"></i> Đăng xuất </a> </li>
          
          
 
