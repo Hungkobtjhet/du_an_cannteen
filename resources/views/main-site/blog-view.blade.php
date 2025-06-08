@@ -100,7 +100,7 @@
             		<h1>Blog</h1>
                 </div>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('home') }}">Trang chủ</a></li>
                     <li class="breadcrumb-item active">Blog</li>
                 </ol>
             </div>
@@ -167,7 +167,7 @@
         	<div class="col-lg-3 mt-3 mt-lg-0">
             	<div class="sidebar">
                 	<div class="widget">
-                    	<h5 class="widget_title">Search</h5>
+                    	<h5 class="widget_title">Tìm kiếm</h5>
                         <div class="search_form">
                             <form action="{{ route('blogs') }}" method="GET"> 
                                 <input name="search" value="{{ request('search') }}" class="form-control" placeholder="Search..." type="text" required>
@@ -193,7 +193,7 @@
                                 </div>
                             </li>
                             @empty
-                                <p>No related blogs found.</p>
+                                <p>Không tìm thấy blog liên quan.</p>
                             @endforelse                        
                     	</ul>
                     </div>

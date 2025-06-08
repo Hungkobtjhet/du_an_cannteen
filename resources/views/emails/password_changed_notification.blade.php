@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password Changed Notification</title>
+    <title>Thông báo thay đổi mật khẩu</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -69,21 +69,21 @@
         </div>
 
         <!-- Greeting -->
-        <h1>Hi {{ $user->first_name }},</h1>
+        <h1>Xin chào {{ $user->first_name }},</h1>
 
         <!-- Introduction -->
-        <p><strong>{{ config('site.name') }} - Password Change Notification</strong></p>
-        <p>Your password has been successfully changed.</p>
+        <p><strong>{{ config('site.name') }} - Thông báo thay đổi mật khẩu</strong></p>
+        <p>Mật khẩu của bạn đã được thay đổi thành công.</p>
 
         <!-- Alert -->
-        <div class="alert">If you did not make this change, please contact our support team immediately.</div>
+        <div class="alert">Nếu bạn không thực hiện thay đổi này, vui lòng liên hệ ngay với nhóm hỗ trợ của chúng tôi.</div>
 
-        <p><strong>Support Email:</strong> <a href="mailto:{{ config('site.email') }}">{{ config('site.email') }}</a></p>
+        <p><strong>Email hỗ trợ:</strong> <a href="mailto:{{ config('site.email') }}">{{ config('site.email') }}</a></p>
 
         <!-- Footer -->
         <div class="footer">
             <hr>
-            <p>Regards,<br>{{ config('site.name') }}</p>
+            <p>Trân trọng,<br>{{ config('site.name') }}</p>
         </div>
     </div>
 </body>

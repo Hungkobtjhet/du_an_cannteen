@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Table Booking Notification</title>
+    <title>Thông báo đặt bàn mới</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -61,25 +61,25 @@
         </div>
 
         <!-- Greeting -->
-        <h1>New Table Booking Notification</h1>
+        <h1>Thông báo đặt bàn mới</h1>
 
         <!-- Booking Details -->
-        <p>Dear Admin,</p>
-        <p>A new table booking has been made:</p>
+        <p>Kính gửi quản trị viên,</p>
+        <p>Đã tạo một bàn đặt mới:</p>
         <ul>
-            <li><strong>Name:</strong> {{ $booking->name }}</li>
+            <li><strong>Tên:</strong> {{ $booking->name }}</li>
             <li><strong>Email:</strong> {{ $booking->email }}</li>
-            <li><strong>Phone:</strong> {{ $booking->phone }}</li>
-            <li><strong>Date:</strong> {{ $booking->date }}</li>
-            <li><strong>Time:</strong> {{ $booking->time }}</li>
-            <li><strong>Persons:</strong> {{ $booking->persons }}</li>
+            <li><strong>Số điện thoại:</strong> {{ $booking->phone }}</li>
+            <li><strong>Ngày:</strong> {{ $booking->date }}</li>
+            <li><strong>Thời gian:</strong> {{ $booking->time }}</li>
+            <li><strong>Số người:</strong> {{ $booking->persons }}</li>
         </ul>
-        <p>Please log in to the admin panel to view more details.</p>
+        <p>Vui lòng đăng nhập vào bảng quản trị để xem thêm thông tin chi tiết.</p>
 
         <!-- Footer -->
         <div class="footer">
             <hr>
-            <p>Regards,<br>{{ config('site.name') }}</p>
+            <p>Trân trọng,<br>{{ config('site.name') }}</p>
         </div>
     </div>
 </body>

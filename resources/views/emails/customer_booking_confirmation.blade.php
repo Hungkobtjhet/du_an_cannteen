@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Table Booking Confirmation</title>
+    <title>Xác nhận đặt bàn của bạn</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -61,23 +61,23 @@
         </div>
 
         <!-- Greeting -->
-        <h1>Your Table Booking Confirmation</h1>
+        <h1>Xác nhận đặt bàn của bạn</h1>
 
         <!-- Booking Details -->
-        <p>Dear {{ $booking->name }},</p>
-        <p>Your table booking has been confirmed:</p>
+        <p>Kính thưa {{ $booking->name }},</p>
+        <p>Việc đặt bàn của bạn đã được xác nhận:</p>
         <ul>
-            <li><strong>Date:</strong> {{ $booking->date }}</li>
-            <li><strong>Time:</strong> {{ $booking->time }}</li>
-            <li><strong>Persons:</strong> {{ $booking->persons }}</li>
+            <li><strong>Ngày:</strong> {{ $booking->date }}</li>
+            <li><strong>Thời gian:</strong> {{ $booking->time }}</li>
+            <li><strong>Số người:</strong> {{ $booking->persons }}</li>
         </ul>
-        <p>If you need to make any changes or have any questions, please contact us.</p>
+        <p>Nếu bạn cần thực hiện bất kỳ thay đổi nào hoặc có bất kỳ câu hỏi nào, vui lòng liên hệ với chúng tôi.</p>
         <p><strong>Email:</strong> {{ config('site.email') }}</p>
  
         <!-- Footer -->
         <div class="footer">
             <hr>
-            <p>Regards,<br>{{ config('site.name') }}</p>
+            <p>Trân trọng,<br>{{ config('site.name') }}</p>
         </div>
     </div>
 </body>

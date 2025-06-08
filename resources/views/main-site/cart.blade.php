@@ -228,11 +228,11 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="page-title">
-            		<h1>Shopping Cart</h1>
+            		<h1>Giỏ hàng</h1>
                 </div>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                    <li class="breadcrumb-item active">Shopping Cart</li>
+                    <li class="breadcrumb-item"><a href="{{ route('home') }}">Trang chủ</a></li>
+                    <li class="breadcrumb-item active">Giỏ hàng</li>
                 </ol>
             </div>
         </div>
@@ -251,10 +251,10 @@
                     	<thead>
                         	<tr>
                             	<th class="product-thumbnail">&nbsp;</th>
-                                <th class="product-name">Product</th>
-                                <th class="product-price">Price</th>
-                                <th class="product-quantity">Quantity</th>
-                                <th class="product-subtotal">Total</th>
+                                <th class="product-name">Sản phẩm</th>
+                                <th class="product-price">Giá</th>
+                                <th class="product-quantity">Số lượng</th>
+                                <th class="product-subtotal">Tổng cộng</th>
                                 <th class="product-remove">Remove</th>
                             </tr>
                         </thead>
@@ -273,7 +273,7 @@
                                   
                                     	</div>
                                         <div class="col-lg-8 col-md-6 text-left text-md-right">
-                                            <button id="clear-cart"  class="btn btn-dark btn-sm" type="submit">Clear Cart</button>
+                                            <button id="clear-cart"  class="btn btn-dark btn-sm" type="submit">Xóa giỏ hàng</button>
                                         </div>
                                     </div>
                                 </td>
@@ -303,13 +303,13 @@
                         <table class="table">
                             <tbody>
                                 <tr>
-                                    <td class="cart_total_label">Cart Subtotal</td>
+                                    <td class="cart_total_label">Tổng phụ của giỏ hàng</td>
                                     <td class="cart_total_amount" id="cart-subtotal">{!! $site_settings->currency_symbol !!}0.00</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                    <a href="{{ route('customer.checkout') }}" class="btn btn-default">Proceed To CheckOut</a>
+                    <a href="{{ route('customer.checkout') }}" class="btn btn-default">Tiến hành thanh toán</a>
 
                 </div>
             </div>
@@ -317,10 +317,10 @@
         <div class="row" id="empty-cart">
             <div class="col-12">
                 <div class="alert alert-secondary text-center" role="alert">
-                    <h4 class="alert-heading">Your Cart is Empty!</h4>
-                    <p>Looks like you haven't added any items to your cart yet. No worries, we've got plenty of delicious options waiting for you.</p>
+                    <h4 class="alert-heading">Giỏ hàng của bạn đang trống!</h4>
+                    <p>Có vẻ như bạn chưa thêm bất kỳ sản phẩm nào vào giỏ hàng. Đừng lo, chúng tôi có rất nhiều lựa chọn ngon miệng đang chờ bạn.</p>
                     <hr>
-                    <p class="mb-0">Head over to our <a href="{{ route('menu') }}" class="alert-link">menu</a> and start exploring!</p>
+                    <p class="mb-0">Hãy đến với chúng tôi <a href="{{ route('menu') }}" class="alert-link">thực đơn</a> và bắt đầu khám phá!</p>
                 </div>
             </div>
         </div>

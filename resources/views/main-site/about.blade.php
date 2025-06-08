@@ -96,10 +96,10 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="page-title">
-                            <h1>About Us</h1>
+                            <h1>Về chúng tôi</h1>
                         </div>
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('home') }}">Trang chủchủ</a></li>
                             <li class="breadcrumb-item active">About Us</li>
                         </ol>
                     </div>
@@ -118,8 +118,8 @@
                         <span class="sub_heading font_style1">About Us</span>
                         <h2>{{ config('site.name') }}</h2>
                     </div>
-                    <p>Welcome to {{ config('site.name') }}, where we bring the vibrant and rich flavors of West African cuisine to your table. Our specialty, Suya, is a smoky, spicy delight that's sure to tantalize your taste buds.</p>
-                    <p>At {{ config('site.name') }}, we are dedicated to serving authentic and innovative dishes crafted from the freshest ingredients. Come experience the best of West African culinary tradition with us!</p>
+                    <p>Chào mừng đến với {{ config('site.name') }}, nơi chúng tôi mang đến cho bạn hương vị sống động và phong phú của ẩm thực Việt Nam. Món đặc sản của chúng tôi là Phở – tinh hoa ẩm thực Việt với nước dùng thanh ngọt, bánh phở mềm và thịt bò hoặc gà thơm ngon, ăn kèm rau thơm tươi mát.</p>
+                    <p>Tại {{ config('site.name') }}, Chúng tôi chuyên phục vụ các món ăn chính thống và sáng tạo được chế biến từ những nguyên liệu tươi ngon nhất. Hãy đến và trải nghiệm những điều tuyệt vời nhất của truyền thống ẩm thực Việt cùng chúng tôi!</p>
                 </div>
             </div>
             
@@ -139,10 +139,10 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-8 animation" data-animation="fadeInUp" data-animation-delay="0.02s">
                         <div class="heading_s1 heading_light">
-                            <span class="sub_heading font_style1">Experience the Authentic Flavors</span>
-                            <h2>{{ config('site.name') }}: A Taste of Tradition</h2>
+                            <span class="sub_heading font_style1">Trải nghiệm hương vị đích thực</span>
+                            <h2>{{ config('site.name') }}: Hương vị truyền thống</h2>
                         </div>
-                        <p class="text-white">Embark on a culinary journey with {{ config('site.name') }}, where we celebrate the rich and diverse flavors of West Africa. Our signature Suya, crafted with a blend of traditional spices, offers a unique and unforgettable dining experience.</p>
+                        <p class="text-white">Bắt đầu cuộc hành trình ẩm thực với {{ config('site.name') }}, nơi chúng tôi tôn vinh hương vị phong phú và đa dạng của Việt Nam. Phở là món ăn đặc trưng của chúng tôi, tinh túy ẩm thực Việt với hương vị đậm đà, khó quên.</p>
                     </div>
                 </div>
             </div>
@@ -161,8 +161,8 @@
                         <i class="flaticon-dining-table"></i>
                     </div>
                     <div class="icon_box_content">
-                        <h5 class="text-uppercase">Authentic African Cuisine</h5>
-                        <p>Relish the flavors of traditional African meals, lovingly prepared to preserve our rich culinary heritage.</p>
+                        <h5 class="text-uppercase">Ẩm thực Việt Nam </h5>
+                        <p>Thưởng thức hương vị của các bữa ăn truyền thống Việt Nam, được chế biến cẩn thận để bảo tồn di sản ẩm thực phong phú của chúng tôi.</p>
                     </div>
                 </div>
             </div>
@@ -174,8 +174,8 @@
                         <i class="flaticon-contact"></i>
                     </div>
                     <div class="icon_box_content">
-                        <h5 class="text-uppercase">Homemade Goodness</h5>
-                        <p>Our meals are prepared with care, blending homemade recipes and fresh ingredients to make you feel right at home.</p>
+                        <h5 class="text-uppercase"></h5>
+                        <p>Các bữa ăn của chúng tôi được chế biến cẩn thận, kết hợp công thức nấu ăn tự làm và nguyên liệu tươi để bạn có cảm giác như đang ở nhà.</p>
                     </div>
                 </div>
             </div>
@@ -187,8 +187,8 @@
                         <i class="flaticon-restaurant"></i>
                     </div>
                     <div class="icon_box_content">
-                        <h5 class="text-uppercase">Satisfying Every Bite</h5>
-                        <p>Enjoy meals that are not just delicious but crafted to leave you completely satisfied with every bite.</p>
+                        <h5 class="text-uppercase">Thỏa mãn từng miếng ăn</h5>
+                        <p>Thưởng thức những bữa ăn không chỉ ngon mà còn được chế biến để khiến bạn hoàn toàn hài lòng với từng miếng ăn.</p>
                     </div>
                 </div>
             </div>

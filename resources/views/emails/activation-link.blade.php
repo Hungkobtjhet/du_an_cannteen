@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Activate Your Account</title>
+    <title>Kích hoạt tài khoản của bạn</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -84,22 +84,22 @@
             <img src="{{ config('site.url') . 'assets/images/logo_light.png' }}" alt="Logo">
         </div>       
 
-        <h1>Activate Your Account</h1>
-        <p>Hi {{ $user->first_name }},</p>
-        <p>Thank you for registering with us. To activate your account and access the admin dashboard, please click the button below:</p>
+        <h1>Kích hoạt tài khoản của bạn</h1>
+        <p>Xin chào {{ $user->first_name }},</p>
+        <p>Cảm ơn bạn đã đăng ký với chúng tôi. Để kích hoạt tài khoản và truy cập bảng điều khiển quản trị, vui lòng nhấp vào nút bên dưới:</p>
         
-        <a href="{{ $activationLink }}" class="button">Activate Account</a>
+        <a href="{{ $activationLink }}" class="button">Kích hoạt tài khoản</a>
         
-        <p>If you have trouble clicking the button, you can copy the following link and paste it into your browser:</p>
+        <p>Nếu bạn gặp sự cố khi nhấp vào nút, bạn có thể sao chép liên kết sau và dán vào trình duyệt của mình:</p>
         
         <p class="link-text">{{ $activationLink }}</p>
 
-        <p>If you did not request this email, please ignore it or contact our support team.</p>
+        <p>Nếu bạn không yêu cầu email này, vui lòng bỏ qua hoặc liên hệ với nhóm hỗ trợ của chúng tôi.</p>
     </div>
 
     <div class="footer">
-        <p>Regards,<br>{{ config('site.name') }}</p>
-        <p>For any issues, contact us at <a href="mailto:{{ config('site.email') }}">{{ config('site.email') }}</a></p>
+        <p>Trân trọng,<br>{{ config('site.name') }}</p>
+        <p>Đối với bất kỳ vấn đề nào, hãy liên hệ với chúng tôi tại <a href="mailto:{{ config('site.email') }}">{{ config('site.email') }}</a></p>
     </div>
 
 </body>

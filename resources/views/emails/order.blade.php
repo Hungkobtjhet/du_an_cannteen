@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Order Details</title>
+    <title>Chi tiết đơn hàng của bạn</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -104,17 +104,17 @@
         </div>
 
         <!-- Greeting -->
-        <h1>Hello, {{ $customerName }},</h1>
-        <p>Thank you for your order! Below are the details of your order.</p>
+        <h1>Xin chào, {{ $customerName }},</h1>
+        <p>Cảm ơn bạn đã đặt hàng! Dưới đây là thông tin chi tiết về đơn hàng của bạn.</p>
 
-        <h3>Order Number: {{ $orderNo }}</h3>
+        <h3>Số thứ tự: {{ $orderNo }}</h3>
 
         <table class="order-table">
             <thead>
                 <tr>
-                    <th>Item</th>
-                    <th>Subtotal</th>
-                    <th>Quantity</th>
+                    <th>Mục</th>
+                    <th>Tổng phụ</th>
+                    <th>Số lượng</th>
                 </tr>
             </thead>
             <tbody>
@@ -128,22 +128,22 @@
             </tbody>
         </table>
 
-        <p><strong>Subtotal:</strong> {!! $site_settings->currency_symbol !!}{{ number_format($totalPrice, 2) }}</p>
-        <p><strong>Delivery Fee:</strong> {!! $site_settings->currency_symbol !!}{{ number_format($deliveryFee, 2) }}</p>
-        <p><strong>Total Price Paid:</strong> {!! $site_settings->currency_symbol !!}{{ number_format($totalPrice + $deliveryFee, 2) }}</p>
+        <p><strong>Tổng phụ:</strong> {!! $site_settings->currency_symbol !!}{{ number_format($totalPrice, 2) }}</p>
+        <p><strong>Phí giao hàng</strong> {!! $site_settings->currency_symbol !!}{{ number_format($deliveryFee, 2) }}</p>
+        <p><strong>Tổng giá thanh toán:</strong> {!! $site_settings->currency_symbol !!}{{ number_format($totalPrice + $deliveryFee, 2) }}</p>
 
-        <p>If you have any questions or need assistance, feel free to contact us:</p>
-        <p><strong>Contact Information:</strong></p>
+        <p>Nếu bạn có bất kỳ câu hỏi hoặc cần hỗ trợ, vui lòng liên hệ với chúng tôi:</p>
+        <p><strong>Thông tin liên hệ:</strong></p>
         <p>Email: {{ $companyEmail }}</p>
-        <p>Phone: {{ $companyPhone ? $companyPhone : 'Not available' }}</p>
+        <p>Số điện thoại: {{ $companyPhone ? $companyPhone : 'Not available' }}</p>
 
-        <p>Thanks for your order!</p>
+        <p>Cảm ơn bạn đã đặt hàng!</p>
 
         <!-- Footer -->
         <div class="footer">
             <hr>
-            <p>If you believe this email is not intended for you, please kindly ignore it or contact us at <a href="mailto:{{ config('site.email') }}">{{ config('site.email') }}</a>.</p>
-            <p>Regards,<br>{{ config('site.name') }}</p>
+            <p>Nếu bạn tin rằng email này không dành cho bạn, vui lòng bỏ qua hoặc liên hệ với chúng tôi tại <a href="mailto:{{ config('site.email') }}">{{ config('site.email') }}</a>.</p>
+            <p>Trân trọng,<br>{{ config('site.name') }}</p>
         </div>
     </div>
 

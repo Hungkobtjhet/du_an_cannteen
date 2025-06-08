@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Account Notification</title>
+    <title>Thông báo tài khoản mới</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -104,14 +104,14 @@
         </div>
 
         <!-- Greeting -->
-        <h1>Welcome, {{ $user->first_name }},</h1>
+        <h1>Chào mừng, {{ $user->first_name }},</h1>
 
         <!-- Introduction -->
-        <p><strong>{{ config('site.name') }} - Your New Account</strong></p>
-        <p>An account has been created for you on {{ config('site.name') }}.</p>
+        <p><strong>{{ config('site.name') }} - Tài khoản mới của bạn</strong></p>
+        <p>Một tài khoản đã được tạo cho bạn trên {{ config('site.name') }}.</p>
 
         <!-- Alert -->
-        <div class="alert">Please use the following credentials to log in</div>
+        <div class="alert">Vui lòng sử dụng thông tin đăng nhập sau để đăng nhập</div>
 
         <!-- Credentials -->
         <table>
@@ -120,22 +120,22 @@
                 <td>{{ $user->email }}</td>
             </tr>
             <tr>
-                <th>Password</th>
+                <th>Mật khẩu</th>
                 <td>{{ $password }}</td>
             </tr>
             <tr>
-                <th>Login Link</th>
+                <th>Liên kết đăng nhập</th>
                 <td><a href="{{ route('admin.login') }}">{{ route('admin.login') }}</a></td>
             </tr>
         </table>
 
-        <p><strong>Important:</strong> A confirmation code will be sent to you when you try to log in for the first time. Use this one-time password to change your password and gain access to the admin panel.</p>
+        <p><strong>Quan trọng:</strong> Mã xác nhận sẽ được gửi cho bạn khi bạn thử đăng nhập lần đầu tiên. Sử dụng mật khẩu một lần này để thay đổi mật khẩu và truy cập vào bảng quản trị.</p>
 
         <!-- Footer -->
         <div class="footer">
             <hr>
-            <p>If you believe this email is not intended for you, please kindly ignore it or contact us at <a href="mailto:{{ config('site.email') }}">{{ config('site.email') }}</a>.</p>
-            <p>Regards,<br>{{ config('site.name') }}</p>
+            <p>Nếu bạn tin rằng email này không dành cho bạn, vui lòng bỏ qua hoặc liên hệ với chúng tôi tại <a href="mailto:{{ config('site.email') }}">{{ config('site.email') }}</a>.</p>
+            <p>Trân trọng,<br>{{ config('site.name') }}</p>
         </div>
     </div>
 

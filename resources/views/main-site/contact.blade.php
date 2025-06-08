@@ -97,11 +97,11 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="page-title">
-                        <h1>Contact</h1>
+                        <h1>Liên hệ</h1>
                     </div>
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                        <li class="breadcrumb-item active">Contact</li>
+                        <li class="breadcrumb-item"><a href="{{ route('home') }}">Trang chủ</a></li>
+                        <li class="breadcrumb-item active">Liên hệ</li>
                     </ol>
                 </div>
             </div>
@@ -119,11 +119,11 @@
                             <i class="linearicons-map2"></i>
                         </div>
                         <div class="contact_text">
-                            <span>Address</span>
+                            <span>Địa chỉ</span>
                             @forelse($addresses as $address)
                                 <p>{{ $address->address }}</p>
                             @empty
-                                <p>No addresses available.</p>
+                                <p>Không có địa chỉ có sẵn.</p>
                             @endforelse
                         </div>
                     </div>
@@ -134,7 +134,7 @@
                             <i class="linearicons-envelope-open"></i>
                         </div>
                         <div class="contact_text">
-                            <span>Email Address</span>
+                            <span>Email </span>
                             <a href="mailto:{{ config('site.email') }}">{{ config('site.email') }}</a> <br>
                         </div>
                     </div>
@@ -149,7 +149,7 @@
                             @forelse($phoneNumbers as $phoneNumber)
                                 <p>{{ $phoneNumber->phone_number }}</p>
                             @empty
-                                <p>No phone numbers available.</p>
+                                <p>Không có số điện thoại nào.</p>
                             @endforelse
                         </div>
                     </div>

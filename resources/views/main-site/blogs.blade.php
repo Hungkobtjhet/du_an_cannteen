@@ -101,7 +101,7 @@
             		<h1>Blog</h1>
                 </div>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('home') }}">Trang chủ</a></li>
                     <li class="breadcrumb-item active">Blog</li>
                 </ol>
             </div>
@@ -133,7 +133,7 @@
                     {{ $blogs->total() === 1 ? 'result' : 'results' }} for your query 
                     <em>"{{ request('search') }}"</em>.
                     <hr/>
-                    <a href="{{ route('blogs') }}" class="btn-sm btn btn-light">Return to Blogs</a>
+                    <a href="{{ route('blogs') }}" class="btn-sm btn btn-light">Quay lại blog</a>
                 </div>
               @endif
                   
@@ -163,7 +163,7 @@
                     @if(!request('search'))
                         <div class="col-12">                   
                             <div class="alert alert-warning text-center" role="alert">
-                                No blogs found.
+                                Không tìm thấy blog nào.
                             </div>
                         </div>
                     @endif

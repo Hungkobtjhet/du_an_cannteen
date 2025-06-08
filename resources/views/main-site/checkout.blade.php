@@ -101,11 +101,11 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="page-title">
-            		<h1>Checkout</h1>
+            		<h1>Thanh toán</h1>
                 </div>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                    <li class="breadcrumb-item active">Checkout</li>
+                    <li class="breadcrumb-item"><a href="{{ route('home') }}">Trang chủ</a></li>
+                    <li class="breadcrumb-item active">Thanh toán</li>
                 </ol>
             </div>
         </div>
@@ -128,48 +128,48 @@
 
                     <!-- Name -->
                     <div class="form-group col-md-12">
-                        <input class="form-control" required type="text" name="name" value="{{ old('name') }}" placeholder="Name *">
+                        <input class="form-control" required type="text" name="name" value="{{ old('name') }}" placeholder="Tên *">
                     </div>
 
                     <!-- Email -->
                     <div class="form-group col-md-12">
-                        <input class="form-control" required type="email" name="email" value="{{ old('email') }}" placeholder="Email Address *">
+                        <input class="form-control" required type="email" name="email" value="{{ old('email') }}" placeholder="Email *">
                     </div>
 
                     <!-- Phone Number -->
                     <div class="form-group col-md-12">
-                        <input class="form-control" required type="tel" name="phone_number" value="{{ old('phone_number') }}" placeholder="Phone Number *">
+                        <input class="form-control" required type="tel" name="phone_number" value="{{ old('phone_number') }}" placeholder="Số điện thoại *">
                     </div>
 
                     <!-- Address -->
                     <div class="form-group col-md-12">
-                        <input class="form-control" required type="text" name="address" value="{{ old('address') }}" placeholder="Address *">
+                        <input class="form-control" required type="text" name="address" value="{{ old('address') }}" placeholder="Địa chỉ *">
                     </div>
 
                     <!-- City -->
                     <div class="form-group col-md-6">
-                        <input class="form-control" required type="text" name="city" value="{{ old('city') }}" placeholder="City / Town *">
+                        <input class="form-control" required type="text" name="city" value="{{ old('city') }}" placeholder="Thành phố / thị trấn  *">
                     </div>
 
                     <!-- State -->
                     <div class="form-group col-md-6">
-                        <input class="form-control" required type="text" name="state" value="{{ old('state') }}" placeholder="State *">
+                        <input class="form-control" required type="text" name="state" value="{{ old('state') }}" placeholder="Tình trạng *">
                     </div>
 
                     <!-- County (Optional) -->
                     <div class="form-group col-md-6">
-                        <input class="form-control" type="text" name="county" value="{{ old('county') }}" placeholder="County (Optional)">
+                        <input class="form-control" type="text" name="county" value="{{ old('county') }}" placeholder="Quận (Tùy chọn)">
                     </div>
 
                     <!-- Postcode -->
                     <div class="form-group col-md-6">
-                        <input class="form-control" required type="text" name="postcode" value="{{ old('postcode') }}" placeholder="Postcode / ZIP *">
+                        <input class="form-control" required type="text" name="postcode" value="{{ old('postcode') }}" placeholder="Pmã bưu điện / ZIP*">
                     </div>
 
                     <!-- Additional Information -->
                     <div class="form-group mb-0 mt-2 col-md-12">
                         <div class="heading_s1">
-                            <h4>Additional Information</h4>
+                            <h4>Thông tin bổ sung</h4>
                         </div>
                         <textarea rows="4" class="form-control" name="additional_info" placeholder="e.g., allergies or any other information you want to provide">{{ old('additional_info') }}</textarea>
                     </div> 
@@ -179,14 +179,14 @@
             <div class="col-lg-6">
                 <div class="order_review">
                     <div class="heading_s1">
-                        <h4>Your Orders</h4>
+                        <h4>Đơn đặt hàng của bạn</h4>
                     </div>
                     <div class="table-responsive order_table">
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th>Product</th>
-                                    <th>Total</th>
+                                    <th>Sản phẩm</th>
+                                    <th>Tổng cộng</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -199,7 +199,7 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>Cart Subtotal</th>
+                                    <th>Tổng phụ của giỏ hàng</th>
                                     <td class="product-subtotal">{!! $site_settings->currency_symbol !!}{{ number_format($subtotal, 2) }}</td>
                                 </tr>
                             </tfoot>
@@ -207,23 +207,23 @@
                     </div>
                     <div class="payment_method">
                         <div class="heading_s1">
-                            <h4>Payment</h4>
+                            <h4>Phải chi</h4>
                         </div>
                         <div class="payment_option">
                 
                    
                             <div class="custome-radio">
                                 <input class="form-check-input" type="radio" name="payment_option" id="exampleRadios5" value="option5" checked="">
-                                <label class="form-check-label" for="exampleRadios5">Stribe Payment</label>
+                                <label class="form-check-label" for="exampleRadios5">Thanh toán </label>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-6 text-start">
-                            <button onclick="window.location.href='{{ route('customer.cart') }}'" type="button" class="btn btn-secondary btn-block">Return to Cart</button>
+                            <button onclick="window.location.href='{{ route('customer.cart') }}'" type="button" class="btn btn-secondary btn-block">Quay lại giỏ hàng</button>
                         </div>
                         <div class="col-6 text-end">
-                            <button type="submit" class="btn btn-default btn-block">Place Order</button>
+                            <button type="submit" class="btn btn-default btn-block">Đặt hàng</button>
                         </div>
                     </div>
 
