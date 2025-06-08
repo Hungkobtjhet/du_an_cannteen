@@ -90,11 +90,11 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="page-title text-center">
-                        <h1>Payment Cancelled</h1>
+                        <h1>Thanh toán đã bị hủy</h1>
                     </div>
                     <ol class="breadcrumb justify-content-center">
-                        <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                        <li class="breadcrumb-item active">Payment Cancelled</li>
+                        <li class="breadcrumb-item"><a href="{{ route('home') }}">Trang chủ</a></li>
+                        <li class="breadcrumb-item active">Thanh toán đã bị hủy</li>
                     </ol>
                 </div>
             </div>
@@ -108,16 +108,16 @@
           <div class="alert alert-default text-center">
             <hr>
             <img src="/assets/images/cancelled.png" alt="Payment Cancelled" style="width:20%" class="img-fluid rounded my-3">
-            <p>We noticed that your payment was not successful. If this was a mistake, you can try placing your order again.</p>
-            <p>If you have any questions or need assistance, please contact us at 
+            <p>Chúng tôi nhận thấy rằng thanh toán của bạn không thành công. Nếu đây là lỗi, bạn có thể thử đặt hàng lại.</p>
+            <p>Nếu bạn có bất kỳ câu hỏi hoặc cần hỗ trợ, vui lòng liên hệ với chúng tôi tại
                 @if($firstRestaurantPhoneNumber)
                     <a href="tel:{{ $firstRestaurantPhoneNumber->phone_number }}">{{ $firstRestaurantPhoneNumber->phone_number }}</a>
                 @endif
-                or email us at 
+                hoặc gửi email cho chúng tôi tại
                 <a href="mailto:{{ config('site.email') }}">{{ config('site.email') }}</a>.
             </p>
             <hr>
-            <a href="{{ route('menu') }}" class="btn btn-danger">Return to Menu</a>
+            <a href="{{ route('menu') }}" class="btn btn-danger">Quay lại thực đơn</a>
         </div>
         
         

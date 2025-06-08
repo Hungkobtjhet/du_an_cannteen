@@ -158,7 +158,7 @@
                             <div class="col-lg-7 col-md-12 col-sm-12">
                                 <div class="banner_content2 text_white">
                                     <h2 class="staggered-animation" data-animation="fadeInUp" data-animation-delay="0.2s">Món ngon Việt Nam </h2>
-                                    <p class="staggered-animation" data-animation="fadeInUp" data-animation-delay="0.4s">Trải nghiệm hương vị sống động với những món ăn được chế biến hoàn hảo. <br class="d-none d-md-block" />Mỗi miếng cắn đưa bạn đến gần hơn với truyền thống và niềm vui.</p>
+                                    <p class="staggered-animation" data-animation="fadeInUp" data-animation-delay="0.4s">Trải nghiệm hương vị sống động với những món ăn được chế biến hoàn hảo. <br class="d-none d-md-block" />Mỗi miếng ăn đưa bạn đến gần hơn với truyền thống và niềm vui.</p>
                                     <a class="btn btn-default rounded-0 staggered-animation" href="{{ route('menu') }}" data-animation="fadeInUp" data-animation-delay="0.6s">Đặt hàng trực tuyến</a>
                                 </div>
                             </div>

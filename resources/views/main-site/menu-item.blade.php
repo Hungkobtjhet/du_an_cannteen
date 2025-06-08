@@ -164,7 +164,7 @@
                                 data-name="{{ $menu->name }}"
                                 data-price="{{ $menu->price }}" 
                                 data-img_src="{{ asset('storage/' . $menu->image) }}"                                            
-                                type="button"  class="{{ $quantity==0 ? '':'d-none' }} btn btn-default rounded-0 add-to-cart"  >Add To Cart</button>
+                                type="button"  class="{{ $quantity==0 ? '':'d-none' }} btn btn-default rounded-0 add-to-cart"  >Thêm vào giỏ hàng</button>
 
 
                                 <button onclick="window.location.href='{{ route('customer.checkout') }}'" type="button" class="{{ $quantity == 0 ? 'd-none' : '' }} btn checkout-btn btn-secondary rounded-0">Proceed To CheckOut</button>
@@ -172,7 +172,7 @@
                         </div>
                     </div>
                     <hr />
-                    <div class="product_share">
+                    <div class="product_share"> 
                         <span>Chia sẻ:</span>
                         <ul class="social_icons">
                             <!-- Facebook Share -->

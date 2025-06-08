@@ -95,11 +95,11 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="page-title">
-                        <h1>Privacy Policy</h1>
+                        <h1>Chính sách bảo mật</h1>
                     </div>
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                        <li class="breadcrumb-item active">Privacy Policy</li>
+                        <li class="breadcrumb-item"><a href="{{ route('home') }}">Trang chủ</a></li>
+                        <li class="breadcrumb-item active">Chính sách bảo mật</li>
                     </ol>
                 </div>
             </div>

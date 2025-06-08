@@ -102,7 +102,7 @@
                     </div>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route('home') }}">Trang chủ</a></li>
-                        <li class="breadcrumb-item active">Our Menu</li>
+                        <li class="breadcrumb-item active">Menu của chúng tôi</li>
                     </ol>
                 </div>
             </div>
@@ -125,19 +125,19 @@
                 <div class="input-group">
                 <input type="text" name="search" class="form-control" placeholder="Search menu items..." value="{{ request('search') }}">
                   <div class="input-group-append">
-                    <button type="submit" class="btn btn-sm btn-danger"  ><i class="linearicons-magnifier"></i> Search</button>
+                    <button type="submit" class="btn btn-sm btn-danger"  ><i class="linearicons-magnifier"></i> Tìm kiếm</button>
                   </div>
                 </div>
               </div>
   
               @if (request('search'))
               <div class="alert alert-info">
-                  We found 
+                  Chúng tôi đã tìm thấy
                   <strong>
                       {{ $categories->sum(fn($category) => $category->menus->count()) }}
                   </strong> 
                   {{ $categories->sum(fn($category) => $category->menus->count()) === 1 ? 'result' : 'results' }} 
-                  for your query: <em>"{{ request('search') }}"</em>.
+                  cho truy vấn của bạn: <em>"{{ request('search') }}"</em>.
                   <hr/>
                   <a href="{{ route('menu') }}" class="btn-sm btn btn-light">Return to menu</a>
               </div>
@@ -183,7 +183,7 @@
             @endif
         @endforeach
     @else
-        <p>No categories found.</p>
+        <p>Không tìm thấy danh mục nào.</p>
     @endif
             
  

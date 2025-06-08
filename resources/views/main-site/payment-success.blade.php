@@ -102,11 +102,11 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="page-title text-center">
-                        <h1>Payment Successful</h1>
+                        <h1>Thanh toán thành công</h1>
                     </div>
                     <ol class="breadcrumb justify-content-center">
-                        <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                        <li class="breadcrumb-item active">Payment Successful</li>
+                        <li class="breadcrumb-item"><a href="{{ route('home') }}">Trang chủ</a></li>
+                        <li class="breadcrumb-item active">Thanh toán thành công</li>
                     </ol>
                 </div>
             </div>
@@ -120,18 +120,18 @@
             <div class="alert alert-default text-center">
                 <hr>
                 <img src="/assets/images/thumbs.png" alt="Image description" style="width:20%" class="img-fluid rounded my-3">
-                <p>Thank you for your order, {{ $order->customer->name }}!</p>
-                <p>Your order number is <strong>#{{ $order->order_no }}</strong>.</p>
-                <p>An email confirmation has been sent to {{ $order->customer->email }}.</p>
-                <p>If you have any questions , please contact us at 
+                <p>Cảm ơn bạn đã đặt hàng, {{ $order->customer->name }}!</p>
+                <p>Số đơn đặt hàng của bạn là <strong>#{{ $order->order_no }}</strong>.</p>
+                <p>Một email xác nhận đã được gửi đến {{ $order->customer->email }}.</p>
+                <p>Nếu bạn có bất kỳ câu hỏi nào, vui lòng liên hệ với chúng tôi tại
                     @if($firstRestaurantPhoneNumber)
                         <a href="tel:{{ $firstRestaurantPhoneNumber->phone_number }}">{{ $firstRestaurantPhoneNumber->phone_number }}</a>
                     @endif
-                    or email us at 
+                    hoặc gửi email cho chúng tôi tại
                     <a href="mailto:{{ config('site.email') }}">{{ config('site.email') }}</a>.
                 </p>
                 <hr>
-                <a href="{{ route('home') }}" class="btn btn-danger">Return to Homepage</a>
+                <a href="{{ route('home') }}" class="btn btn-danger">Quay lại trang chủ</a>
             </div>
         </div>
     </div>

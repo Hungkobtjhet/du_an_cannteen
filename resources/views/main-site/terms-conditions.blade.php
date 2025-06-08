@@ -97,11 +97,11 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="page-title">
-                        <h1>Terms and Conditions</h1>
+                        <h1>Điều khoản và Điều kiện</h1>
                     </div>
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                        <li class="breadcrumb-item active">Terms and Conditions</li>
+                        <li class="breadcrumb-item"><a href="{{ route('home') }}">Trang chủ </a></li>
+                        <li class="breadcrumb-item active">Điều khoản và Điều kiện </li>
                     </ol>
                 </div>
             </div>

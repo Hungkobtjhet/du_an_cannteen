@@ -5,7 +5,7 @@
         <div class="inner">
           <h3>{{ $pending_orders_count }}</h3>
 
-          <p>Pending Orders</p>
+          <p>Lệnh chờ xử lý</p>
         </div>
         <div class="icon">
           <i class="ion ion-help-circled"></i>
@@ -20,7 +20,7 @@
         <div class="inner">
           <h3>{{ $online_orders_count }}</h3>
 
-          <p>Online Orders</p>
+          <p>Đơn đặt hàng trực tuyến</p>
         </div>
         <div class="icon">
           <i class="ion ion-android-globe"></i>
@@ -35,7 +35,7 @@
         <div class="inner">
           <h3>{{ $instore_orders_count }}</h3>
 
-          <p>Instore Orders</p>
+          <p>Đơn đặt hàng tại cửa hàng</p>
         </div>
         <div class="icon">
           <i class="ion ion-bag"></i>
@@ -50,7 +50,7 @@
         <div class="inner">
           <h3>{{ $all_orders_count }}</h3>
 
-          <p>All Orders</p>
+          <p>Tất cả đơn hàng</p>
         </div>
         <div class="icon">
           <i class="ion ion-pie-graph"></i>
