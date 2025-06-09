@@ -8,7 +8,7 @@
                 	<div class="widget">
                         <div class="footer_logo text-center">
                             <a href="{{ route('home') }}">
-                                <img src="{{ asset('blog-images/logo-canteen1.jpg') }}" alt="CANTEEN Logo" style="max-height: 150px;">
+                                <img src="{{ asset('blog-images/logo-canteen.jpg.png') }}" alt="CANTEEN Logo" style="max-height: 200px;">
                             </a>
                         </div>
                         <p>Tại {{ config('site.name') }}, Chúng tôi tự hào mang đến cho bạn hương vị đích thực của Việt Nam. Các món ăn được chế biến khéo léo và lòng hiếu khách nồng hậu của chúng tôi tạo nên trải nghiệm ẩm thực mà bạn sẽ không bao giờ quên.</p>
