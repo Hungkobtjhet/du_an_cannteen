@@ -99,8 +99,8 @@
                             <h1>Về chúng tôi</h1>
                         </div>
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{ route('home') }}">Trang chủchủ</a></li>
-                            <li class="breadcrumb-item active">About Us</li>
+                            <li class="breadcrumb-item"><a href="{{ route('home') }}">Trang chủ</a></li>
+                            <li class="breadcrumb-item active">Về chúng tôi</li>
                         </ol>
                     </div>
                 </div>
@@ -115,7 +115,7 @@
             <div class="col-lg-6">
                 <div class="about_box box_shadow1">
                     <div class="heading_s1">
-                        <span class="sub_heading font_style1">About Us</span>
+                        <span class="sub_heading font_style1">Về chúng tôi</span>
                         <h2>{{ config('site.name') }}</h2>
                     </div>
                     <p>Chào mừng đến với {{ config('site.name') }}, nơi chúng tôi mang đến cho bạn hương vị sống động và phong phú của ẩm thực Việt Nam. Món đặc sản của chúng tôi là Phở – tinh hoa ẩm thực Việt với nước dùng thanh ngọt, bánh phở mềm và thịt bò hoặc gà thơm ngon, ăn kèm rau thơm tươi mát.</p>
@@ -126,7 +126,7 @@
         	<div class="col-lg-6">	
                 <div class="fancy_style1 overlay_bg_20">
                     <img src="assets/images/about_img5.jpg" alt="about_img5" />
-                    <a href="https://www.youtube.com/watch?v=ZE2HxTmxfrI" class="btn btn-ripple ripple_center video_popup animation" data-animation="fadeInUp" data-animation-delay="0.6s"><span class="ripple"><i class="ion-play"></i></span></a>
+                    <a href="https://www.youtube.com/shorts/FC9FU4gkvfM" class="btn btn-ripple ripple_center video_popup animation" data-animation="fadeInUp" data-animation-delay="0.6s"><span class="ripple"><i class="ion-play"></i></span></a>
                 </div>
             </div>
         </div>

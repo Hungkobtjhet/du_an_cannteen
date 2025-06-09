@@ -427,7 +427,7 @@
                     <span class="sub_heading font_style1">Từ Blog</span>
                     <h2>Tin tức mới nhất của chúng tôi</h2>
                 </div>
-                <p class="text-center leads">Khám phá những câu chuyện đằng sau hương vị châu Phi phong phú, niềm đam mê của chúng tôi và nghệ thuật.</p>
+                <p class="text-center leads">Khám phá những câu chuyện đằng sau hương vị phong phú, niềm đam mê của chúng tôi và nghệ thuật.</p>
             </div>
         </div>
         <div class="row justify-content-center">

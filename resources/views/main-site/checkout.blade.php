@@ -146,32 +146,12 @@
                         <input class="form-control" required type="text" name="address" value="{{ old('address') }}" placeholder="Địa chỉ *">
                     </div>
 
-                    <!-- City -->
-                    <div class="form-group col-md-6">
-                        <input class="form-control" required type="text" name="city" value="{{ old('city') }}" placeholder="Thành phố / thị trấn  *">
-                    </div>
-
-                    <!-- State -->
-                    <div class="form-group col-md-6">
-                        <input class="form-control" required type="text" name="state" value="{{ old('state') }}" placeholder="Tình trạng *">
-                    </div>
-
-                    <!-- County (Optional) -->
-                    <div class="form-group col-md-6">
-                        <input class="form-control" type="text" name="county" value="{{ old('county') }}" placeholder="Quận (Tùy chọn)">
-                    </div>
-
-                    <!-- Postcode -->
-                    <div class="form-group col-md-6">
-                        <input class="form-control" required type="text" name="postcode" value="{{ old('postcode') }}" placeholder="Pmã bưu điện / ZIP*">
-                    </div>
-
                     <!-- Additional Information -->
                     <div class="form-group mb-0 mt-2 col-md-12">
                         <div class="heading_s1">
                             <h4>Thông tin bổ sung</h4>
                         </div>
-                        <textarea rows="4" class="form-control" name="additional_info" placeholder="e.g., allergies or any other information you want to provide">{{ old('additional_info') }}</textarea>
+                        <textarea rows="4" class="form-control" name="additional_info" placeholder="">{{ old('additional_info') }}</textarea>
                     </div> 
                 </div>
             
@@ -186,49 +166,73 @@
                             <thead>
                                 <tr>
                                     <th>Sản phẩm</th>
-                                    <th>Tổng cộng</th>
+                                    <th>Tổng</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach($cart as $item)
                                 <tr>
                                     <td>{{ $item['name'] }} <span class="product-qty">x {{ $item['quantity'] }}</span></td>
-                                    <td>{!! $site_settings->currency_symbol !!}{{ number_format($item['price'] * $item['quantity'], 2) }}</td>
+                                    <td>{{ number_format($item['price'] * $item['quantity']) }} VND</td>
                                 </tr>
                                 @endforeach
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>Tổng phụ của giỏ hàng</th>
-                                    <td class="product-subtotal">{!! $site_settings->currency_symbol !!}{{ number_format($subtotal, 2) }}</td>
+                                    <th>Tổng tiền hàng</th>
+                                    <td>{{ number_format($subtotal) }} VND</td>
+                                </tr>
+                                <tr>
+                                    <th>Phí vận chuyển</th>
+                                    <td id="shipping_fee">0 VND</td>
+                                </tr>
+                                <tr>
+                                    <th>Tổng thanh toán</th>
+                                    <td id="total_payment">{{ number_format($subtotal) }} VND</td>
                                 </tr>
                             </tfoot>
                         </table>
                     </div>
-                    <div class="payment_method">
-                        <div class="heading_s1">
-                            <h4>Phải chi</h4>
-                        </div>
-                        <div class="payment_option">
-                
-                   
-                            <div class="custome-radio">
-                                <input class="form-check-input" type="radio" name="payment_option" id="exampleRadios5" value="option5" checked="">
-                                <label class="form-check-label" for="exampleRadios5">Thanh toán </label>
-                            </div>
-                        </div>
+
+                    <div class="mb-3">
+                        <label for="distance">Khoảng cách (km):</label>
+                        <input type="number" id="distance" name="distance" class="form-control" min="1" required>
                     </div>
-                    <div class="row">
+                    <button type="button" class="btn btn-primary" onclick="calculateShipping()">Tính phí vận chuyển</button>
+
+                    <div class="row mt-3">
                         <div class="col-6 text-start">
-                            <button onclick="window.location.href='{{ route('customer.cart') }}'" type="button" class="btn btn-secondary btn-block">Quay lại giỏ hàng</button>
+                            <a href="{{ route('customer.cart') }}" class="btn btn-secondary btn-block">Quay lại giỏ hàng</a>
                         </div>
                         <div class="col-6 text-end">
-                            <button type="submit" class="btn btn-default btn-block">Đặt hàng</button>
+                            <button type="submit" class="btn btn-success btn-block">Đặt hàng</button>
                         </div>
                     </div>
-
                 </div>
             </div>
+
+            <script>
+            function calculateShipping() {
+                let distance = document.getElementById('distance').value;
+                fetch("{{ route('calculate.shipping') }}", {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        distance: distance,
+                        total_weight: {{ $totalWeight }}
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('shipping_fee').innerText = data.shipping_fee_format;
+                    let totalPayment = {{ $subtotal }} + data.shipping_fee;
+                    document.getElementById('total_payment').innerText = totalPayment.toLocaleString('vi-VN') + ' VND';
+                });
+            }
+            </script>
         </div>
     </div>
 </div>

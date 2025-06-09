@@ -160,16 +160,25 @@
                             </div>
                         </div>
                         <div class="cart_btn">
-                            <button data-id="{{ $menu->id }}"
-                                data-name="{{ $menu->name }}"
-                                data-price="{{ $menu->price }}" 
-                                data-img_src="{{ asset('storage/' . $menu->image) }}"                                            
-                                type="button"  class="{{ $quantity==0 ? '':'d-none' }} btn btn-default rounded-0 add-to-cart"  >Thêm vào giỏ hàng</button>
+                        <!-- Nút Thêm vào giỏ hàng -->
+                        <button 
+                            data-id="{{ $menu->id }}"
+                            data-name="{{ $menu->name }}"
+                            data-price="{{ $menu->price }}" 
+                            data-img_src="{{ asset('storage/' . $menu->image) }}"                                            
+                            type="button"  
+                            class="{{ $quantity == 0 ? '' : 'd-none' }} btn btn-primary rounded-0 add-to-cart">
+                            Thêm vào giỏ hàng
+                        </button>
 
-
-                                <button onclick="window.location.href='{{ route('customer.checkout') }}'" type="button" class="{{ $quantity == 0 ? 'd-none' : '' }} btn checkout-btn btn-secondary rounded-0">Proceed To CheckOut</button>
-
-                        </div>
+                        <!-- Nút Mua ngay -->
+                        <button 
+                            onclick="window.location.href='{{ route('customer.checkout') }}'" 
+                            type="button" 
+                            class="{{ $quantity == 0 ? 'd-none' : '' }} btn btn-success rounded-0 checkout-btn">
+                            Mua ngay
+                        </button>
+                    </div>
                     </div>
                     <hr />
                     <div class="product_share"> 

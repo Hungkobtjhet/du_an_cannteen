@@ -134,11 +134,12 @@
                             <i class="linearicons-envelope-open"></i>
                         </div>
                         <div class="contact_text">
-                            <span>Email </span>
-                            <a href="mailto:{{ config('site.email') }}">{{ config('site.email') }}</a> <br>
+                            <span>Email</span>
+                            <a href="mailto:canteen@cvibe.net">canteen@cvibe.net</a><br>
                         </div>
                     </div>
                 </div>
+
                 <div class="col-xl-4 col-md-12 animation d-flex" data-animation="fadeInUp" data-animation-delay="0.4s">
                     <div class="contact_wrap contact_style3 flex-fill">
                         <div class="contact_icon">
@@ -176,11 +177,11 @@
                          <div class="contact_wrap contact_style3 flex-fill">
                                  
                             <div class="contact_text">
-                                <span>Opening Hours</span>
+                                <span>Giờ mở cửa</span>
                                 @forelse($workingHours as $workingHour)
                                     <p>{{ $workingHour->working_hours }}</p>
                                 @empty
-                                    <p>No working hours available.</p>
+                                    <p>Không có giờ làm việc.</p>
                                 @endforelse
                             </div>
                         </div>

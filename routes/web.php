@@ -25,6 +25,8 @@ use App\Http\Controllers\AIStaticController;
 Route::get('/ai-chat-basic', [AIStaticController::class, 'index'])->name('ai.chat.basic');
 Route::post('/ai-chat-basic', [AIStaticController::class, 'chat']);
 
+Route::get('/checkout', [CheckoutController::class, 'index'])->name('customer.checkout');
+Route::post('/calculate-shipping', [CheckoutController::class, 'calculateShipping'])->name('calculate.shipping');
 
 Route::get('/', [MainSiteController::class, 'home'])->name('home');
 

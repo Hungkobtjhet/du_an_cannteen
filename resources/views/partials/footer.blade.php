@@ -8,7 +8,7 @@
                 	<div class="widget">
                         <div class="footer_logo text-center">
                             <a href="{{ route('home') }}">
-                                <img src="{{ asset('blog-images/logo-canteen.jpg') }}" alt="CANTEEN Logo" style="max-height: 80px;">
+                                <img src="{{ asset('blog-images/logo-canteen1.jpg') }}" alt="CANTEEN Logo" style="max-height: 150px;">
                             </a>
                         </div>
                         <p>Tại {{ config('site.name') }}, Chúng tôi tự hào mang đến cho bạn hương vị đích thực của Việt Nam. Các món ăn được chế biến khéo léo và lòng hiếu khách nồng hậu của chúng tôi tạo nên trải nghiệm ẩm thực mà bạn sẽ không bao giờ quên.</p>
@@ -36,9 +36,9 @@
                         <h6 class="widget_title">Liên kết</h6>
                         <ul class="widget_links">
                             <li><a href="{{ route('home') }}">Trang chủ</a></li>
-                            <li><a href="{{ route('menu') }}">Thực đơn của chúng tôi</a></li>
-                            <li><a href="{{ route('about') }}">Về chúng tôi</a> </li>
-                            <li><a href="{{ route('contact') }}">Liên hệ với chúng tôi</a></li>
+                            <li><a href="{{ route('menu') }}">Thực đơn</a></li>
+                            <li><a href="{{ route('about') }}">Giới thiệu</a> </li>
+                            <li><a href="{{ route('contact') }}">Liên hệ </a></li>
                             
                             @if($whatsAppNumber)
                             <li> <a href="https://wa.me/{{ $whatsAppNumber->phone_number }}" target="_blank" ><i class="fa fa-whatsapp"></i>Trò chuyện với chúng tôi trên Whatsapp</a></li>
@@ -54,7 +54,7 @@
                             <li><i class="ti-location-pin"></i> <p>{{ $firstRestaurantAddress->address }}</p></li>
                         @endif
 
-                        <li><i class="ti-email"></i> <a href="mailto:tuanhung091008@gmail.com">canteen@cvibe.net</a></li>
+                        <li><i class="ti-email"></i> <a href="mailto:canteen@cvibe.net">canteen@cvibe.net</a></li>
 
                         <li><i class="ti-mobile"></i> <p></p></li>
                     </ul>
