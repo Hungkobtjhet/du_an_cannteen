@@ -156,7 +156,7 @@
                 </div>
             
             </div>
-          <div class="col-lg-6">
+            <div class="col-lg-6">
                 <div class="order_review">
                     <div class="heading_s1">
                         <h4>Đơn đặt hàng của bạn</h4>
@@ -166,74 +166,49 @@
                             <thead>
                                 <tr>
                                     <th>Sản phẩm</th>
-                                    <th>Tổng</th>
+                                    <th>Tổng thanh toán</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach($cart as $item)
                                 <tr>
                                     <td>{{ $item['name'] }} <span class="product-qty">x {{ $item['quantity'] }}</span></td>
-                                    <td>{{ number_format($item['price'] * $item['quantity']) }} VND</td>
+                                    <td>{!! $site_settings->currency_symbol !!}{{ number_format($item['price'] * $item['quantity'], 2) }}</td>
                                 </tr>
                                 @endforeach
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>Tổng tiền hàng</th>
-                                    <td>{{ number_format($subtotal) }} VND</td>
-                                </tr>
-                                <tr>
-                                    <th>Phí vận chuyển</th>
-                                    <td id="shipping_fee">0 VND</td>
-                                </tr>
-                                <tr>
-                                    <th>Tổng thanh toán</th>
-                                    <td id="total_payment">{{ number_format($subtotal) }} VND</td>
+                                    <th>Tổng tiền</th>
+                                    <td class="product-subtotal">{!! $site_settings->currency_symbol !!}{{ number_format($subtotal, 2) }}</td>
                                 </tr>
                             </tfoot>
                         </table>
                     </div>
-
-                    <div class="mb-3">
-                        <label for="distance">Khoảng cách (km):</label>
-                        <input type="number" id="distance" name="distance" class="form-control" min="1" required>
+                    <div class="payment_method">
+                        <div class="heading_s1">
+                            <h4>Tổng thanh toán</h4>
+                        </div>
+                        <div class="payment_option">
+                
+                   
+                            <div class="custome-radio">
+                                <input class="form-check-input" type="radio" name="payment_option" id="exampleRadios5" value="option5" checked="">
+                                <label class="form-check-label" for="exampleRadios5">Thanh toán </label>
+                            </div>
+                        </div>
                     </div>
-                    <button type="button" class="btn btn-primary" onclick="calculateShipping()">Tính phí vận chuyển</button>
-
-                    <div class="row mt-3">
+                    <div class="row">
                         <div class="col-6 text-start">
-                            <a href="{{ route('customer.cart') }}" class="btn btn-secondary btn-block">Quay lại giỏ hàng</a>
+                            <button onclick="window.location.href='{{ route('customer.cart') }}'" type="button" class="btn btn-secondary btn-block">Quay lại giỏ hàng</button>
                         </div>
                         <div class="col-6 text-end">
-                            <button type="submit" class="btn btn-success btn-block">Đặt hàng</button>
+                            <button type="submit" class="btn btn-default btn-block">Đặt hàng</button>
                         </div>
                     </div>
+
                 </div>
             </div>
-
-            <script>
-            function calculateShipping() {
-                let distance = document.getElementById('distance').value;
-                fetch("{{ route('calculate.shipping') }}", {
-                    method: 'POST',
-                    headers: {
-                        'X-CSRF-TOKEN': '{{ csrf_token() }}',
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        distance: distance,
-                        total_weight: {{ $totalWeight }}
-                    })
-                })
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('shipping_fee').innerText = data.shipping_fee_format;
-                    let totalPayment = {{ $subtotal }} + data.shipping_fee;
-                    document.getElementById('total_payment').innerText = totalPayment.toLocaleString('vi-VN') + ' VND';
-                });
-            }
-            </script>
-
         </div>
     </div>
 </div>
