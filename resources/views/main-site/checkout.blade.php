@@ -187,15 +187,22 @@
                     </div>
                     <div class="payment_method">
                         <div class="heading_s1">
-                            <h4>Tổng thanh toán</h4>
+                            <h4>Phương thức thanh toán</h4>
                         </div>
                         <div class="payment_option">
-                
-                   
+
+                            <!-- Thanh toán khi nhận hàng -->
                             <div class="custome-radio">
-                                <input class="form-check-input" type="radio" name="payment_option" id="exampleRadios5" value="option5" checked="">
-                                <label class="form-check-label" for="exampleRadios5">Thanh toán </label>
+                                <input class="form-check-input" type="radio" name="payment_option" id="cod" value="cod" checked>
+                                <label class="form-check-label" for="cod">Thanh toán khi nhận hàng</label>
                             </div>
+
+                            <!-- Chuyển khoản ngân hàng -->
+                            <div class="custome-radio mt-2">
+                                <input class="form-check-input" type="radio" name="payment_option" id="bank" value="bank">
+                                <label class="form-check-label" for="bank">Chuyển khoản ngân hàng</label>
+                            </div>
+
                         </div>
                     </div>
                     <div class="row">
