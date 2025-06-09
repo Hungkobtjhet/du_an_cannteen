@@ -153,32 +153,35 @@
                     <hr />
                     <div class="cart_extra">
                         <div class="cart-product-quantity">
-                            <div class="quantity {{ $quantity==0? 'd-none':'' }}"  >
+                            <div class="quantity" >
                                 <input type="button" value="-" class="minus">
-                                <input type="text" min="0" name="quantity" value="{{ $quantity }}" title="Qty" class="qty quantity-input" size="4" data-id="{{ $menu->id }}">
+                                <input type="text" min="1" name="quantity" value="{{ $quantity > 0 ? $quantity : 1 }}" title="Số lượng" class="qty quantity-input" size="4" data-id="{{ $menu->id }}">
                                 <input type="button" value="+" class="plus">
                             </div>
                         </div>
-                        <div class="cart_btn">
-                        <!-- Nút Thêm vào giỏ hàng -->
-                        <button 
-                            data-id="{{ $menu->id }}"
-                            data-name="{{ $menu->name }}"
-                            data-price="{{ $menu->price }}" 
-                            data-img_src="{{ asset('storage/' . $menu->image) }}"                                            
-                            type="button"  
-                            class="{{ $quantity == 0 ? '' : 'd-none' }} btn btn-primary rounded-0 add-to-cart">
-                            Thêm vào giỏ hàng
-                        </button>
 
-                        <!-- Nút Mua ngay -->
-                        <button 
-                            onclick="window.location.href='{{ route('customer.checkout') }}'" 
-                            type="button" 
-                            class="{{ $quantity == 0 ? 'd-none' : '' }} btn btn-success rounded-0 checkout-btn">
-                            Mua ngay
-                        </button>
+                        <div class="cart_btn mt-2 d-flex gap-2">
+                            <!-- Thêm vào giỏ hàng -->
+                            <button 
+                                data-id="{{ $menu->id }}"
+                                data-name="{{ $menu->name }}"
+                                data-price="{{ $menu->price }}" 
+                                data-img_src="{{ asset('storage/' . $menu->image) }}"                                            
+                                type="button"  
+                                class="btn btn-primary rounded-0 add-to-cart flex-fill">
+                                Thêm vào giỏ hàng
+                            </button>
+
+                            <!-- Mua ngay -->
+                            <button 
+                                onclick="window.location.href='{{ route('customer.checkout') }}'" 
+                                type="button" 
+                                class="btn btn-success rounded-0 checkout-btn flex-fill">
+                                Mua ngay
+                            </button>
+                        </div>
                     </div>
+
                     </div>
                     <hr />
                     <div class="product_share"> 
