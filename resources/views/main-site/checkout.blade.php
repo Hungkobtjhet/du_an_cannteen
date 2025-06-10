@@ -185,6 +185,8 @@
                             </tfoot>
                         </table>
                     </div>
+
+                    <!-- Phương thức thanh toán -->
                     <div class="payment_method">
                         <div class="heading_s1">
                             <h4>Phương thức thanh toán</h4>
@@ -203,8 +205,18 @@
                                 <label class="form-check-label" for="bank">Chuyển khoản ngân hàng</label>
                             </div>
 
+                            <!-- QR chuyển khoản - ẩn mặc định -->
+                            <div id="qr-payment" class="mt-3" style="display:none;">
+                                <h6>Quét mã QR để chuyển khoản</h6>
+                                <img src="{{ asset('storage/qr-code.png') }}" alt="Mã QR chuyển khoản" style="max-width: 200px;">
+                                <p class="mt-2"><strong>Ngân hàng:</strong> ABC Bank</p>
+                                <p><strong>Chủ tài khoản:</strong> Nguyễn Văn A</p>
+                                <p><strong>Nội dung:</strong> Thanh toán đơn hàng {{ session('order_code') ?? 'ABC123' }}</p>
+                            </div>
+
                         </div>
                     </div>
+
                     <div class="row">
                         <div class="col-6 text-start">
                             <button onclick="window.location.href='{{ route('customer.cart') }}'" type="button" class="btn btn-secondary btn-block">Quay lại giỏ hàng</button>
@@ -216,6 +228,24 @@
 
                 </div>
             </div>
+
+            <!-- Script để hiển thị QR khi chọn chuyển khoản -->
+            <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const qr = document.getElementById('qr-payment');
+                const codRadio = document.getElementById('cod');
+                const bankRadio = document.getElementById('bank');
+
+                codRadio.addEventListener('change', function () {
+                    if (this.checked) qr.style.display = 'none';
+                });
+
+                bankRadio.addEventListener('change', function () {
+                    if (this.checked) qr.style.display = 'block';
+                });
+            });
+            </script>
+
         </div>
     </div>
 </div>
