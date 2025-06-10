@@ -189,43 +189,27 @@
                 </div>
 
                 <!-- QR Code hiển thị khi chọn chuyển khoản -->
-                 <div id="qr-payment" style="display: none; margin-top: 15px;">
-                    @php
-                        $bank = 'MB'; // Ngân hàng
-                        $account = '123456789'; // Số tài khoản
-                        $name = 'CANTEEN'; // Tên chủ tài khoản
-                        $amount = $total; // Tổng tiền (đã tính cả phí vận chuyển nếu có)
-                        $description = 'CANTEEN-' . now()->timestamp;
-
-                        $qrUrl = "https://img.vietqr.io/image/{$bank}-{$account}-compact.png?amount={$amount}&addInfo={$description}&accountName={$name}";
-                    @endphp
-
-                    <img src="{{ $qrUrl }}" alt="QR chuyển khoản" width="220">
-                    <div class="mt-2"><strong>Nội dung chuyển khoản:</strong> {{ $description }}</div>
+                <div id="bank-transfer-details" class="mt-3" style="display: none;">
+                    <h5>Thông tin chuyển khoản</h5>
+                    <p><strong>Ngân hàng:</strong> MB Bank</p>
+                    <p><strong>Số tài khoản:</strong> 123456789</p>
+                    <p><strong>Chủ tài khoản:</strong> CANTEEN</p>
+                    <p><strong>Nội dung chuyển khoản:</strong> CANTEEN-{{ now()->timestamp }}</p>
+                    <img src="{{ asset('images/qr-bank.png') }}" alt="QR Chuyển khoản" width="200">
                 </div>
 
                 <button type="submit" class="btn btn-primary w-100 mt-3">Đặt hàng</button>
             </div>
             <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                const qrPayment = document.getElementById("qr-payment");
-                const codRadio = document.getElementById("cod");
-                const bankRadio = document.getElementById("bank");
-
-                codRadio.addEventListener("change", () => {
-                    if (codRadio.checked) {
-                        qrPayment.style.display = "none";
-                    }
+                document.addEventListener('DOMContentLoaded', function () {
+                    document.querySelectorAll('input[name="payment_method"]').forEach(function (el) {
+                        el.addEventListener('change', function () {
+                            document.getElementById('bank-transfer-details').style.display = (this.value === 'bank') ? 'block' : 'none';
+                        });
+                    });
                 });
-
-                bankRadio.addEventListener("change", () => {
-                    if (bankRadio.checked) {
-                        qrPayment.style.display = "block";
-                    }
-                });
-            });
             </script>
-            
+
         </div>
     </div>
 </div>
