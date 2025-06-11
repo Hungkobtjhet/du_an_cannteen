@@ -8,7 +8,7 @@
                 	<div class="widget">
                         <div class="footer_logo" style="text-align: left; padding-left: 20px;">
                             <a href="{{ route('home') }}">
-                                <img src="{{ asset('assets/images/logo-canteen1.png') }}" alt="CANTEEN Logo" style="max-height: 150px; height: auto;">
+                                <img src="{{ asset('assets/images/logo-canteen1.png') }}" alt="logo" style="max-height: 150px; height: auto;">
                             </a>
                         </div>
 
