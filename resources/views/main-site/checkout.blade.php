@@ -208,7 +208,7 @@
                             <!-- QR chuyển khoản - ẩn mặc định -->
                             <div id="qr-payment" class="mt-3" style="display:none;">
                                 <h6>Quét mã QR để chuyển khoản</h6>
-                                <img src="{{ asset('assets/images/Ma-qr') }}" alt="Mã QR chuyển khoản" style="max-width: 200px;">
+                                <img src="{{ asset('assets/images/Ma-qr.png') }}" alt="Mã QR chuyển khoản" style="max-width: 200px;">
                                 <p class="mt-2"><strong>Ngân hàng:</strong> MB</p>
                                 <p><strong>Chủ tài khoản:</strong> </p>
                                 <p><strong>Nội dung:</strong> Thanh toán đơn hàng {{ session('order_code') ?? '' }}</p>
