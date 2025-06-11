@@ -187,44 +187,134 @@
                     </div>
 
                     <!-- Phương thức thanh toán -->
-                    <div class="payment_method">
-                        <div class="heading_s1">
-                            <h4>Phương thức thanh toán</h4>
-                        </div>
-                        <div class="payment_option">
-
-                            <!-- Thanh toán khi nhận hàng -->
-                            <div class="custome-radio">
-                                <input class="form-check-input" type="radio" name="payment_option" id="cod" value="cod" checked>
-                                <label class="form-check-label" for="cod">Thanh toán khi nhận hàng</label>
-                            </div>
-
-                            <!-- Chuyển khoản ngân hàng -->
-                            <div class="custome-radio mt-2">
-                                <input class="form-check-input" type="radio" name="payment_option" id="bank" value="bank">
-                                <label class="form-check-label" for="bank">Chuyển khoản ngân hàng</label>
-                            </div>
-
-                            <!-- QR chuyển khoản - ẩn mặc định -->
-                            <div id="qr-payment" class="mt-3" style="display:none;">
-                                <h6>Quét mã QR để chuyển khoản</h6>
-                                <img src="{{ asset('storage/qr-code.png') }}" alt="Mã QR chuyển khoản" style="max-width: 200px;">
-                                <p class="mt-2"><strong>Ngân hàng:</strong> ABC Bank</p>
-                                <p><strong>Chủ tài khoản:</strong> Nguyễn Văn A</p>
-                                <p><strong>Nội dung:</strong> Thanh toán đơn hàng {{ session('order_code') ?? 'ABC123' }}</p>
-                            </div>
-
+                    <div class="cart_extra mb-4">
+                    <!-- Số lượng -->
+                    <div class="cart-product-quantity mb-3">
+                        <label for="quantity" class="form-label">Số Lượng</label>
+                        <div class="quantity d-flex align-items-center">
+                            <button type="button" class="minus btn btn-outline-secondary px-2">-</button>
+                            <input type="text" min="1" name="quantity" value="1" class="qty quantity-input form-control text-center mx-2" size="2" style="width: 60px;">
+                            <button type="button" class="plus btn btn-outline-secondary px-2">+</button>
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-6 text-start">
-                            <button onclick="window.location.href='{{ route('customer.cart') }}'" type="button" class="btn btn-secondary btn-block">Quay lại giỏ hàng</button>
+                    <!-- Nút Thêm vào giỏ hàng & Mua ngay -->
+                    <div class="cart_btn d-flex gap-2">
+                        <button 
+                            type="button" 
+                            class="btn btn-outline-danger flex-fill add-to-cart" 
+                            data-id="{{ $menu->id }}" 
+                            data-name="{{ $menu->name }}" 
+                            data-price="{{ $menu->price }}" 
+                            data-img_src="{{ asset('storage/' . $menu->image) }}">
+                            <i class="fas fa-shopping-cart me-1"></i> Thêm Vào Giỏ Hàng
+                        </button>
+
+                        <button 
+                            type="button" 
+                            onclick="window.location.href='{{ route('customer.checkout') }}'" 
+                            class="btn btn-danger flex-fill">
+                            Mua Ngay
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Phương thức thanh toán -->
+                <div class="payment_method mt-4">
+                    <h4>Phương thức thanh toán</h4>
+                    <div class="payment_option">
+
+                        <!-- Thanh toán khi nhận hàng -->
+                        <div class="custome-radio">
+                            <input class="form-check-input" type="radio" name="payment_option" id="cod" value="cod" checked>
+                            <label class="form-check-label" for="cod">Thanh toán khi nhận hàng / tại nhà hàng</label>
                         </div>
-                        <div class="col-6 text-end">
-                            <button type="submit" class="btn btn-default btn-block">Đặt hàng</button>
+
+                        <!-- Chuyển khoản ngân hàng -->
+                        <div class="custome-radio mt-2">
+                            <input class="form-check-input" type="radio" name="payment_option" id="bank" value="bank">
+                            <label class="form-check-label" for="bank">Chuyển khoản ngân hàng</label>
+                        </div>
+
+                        <!-- QR chuyển khoản -->
+                        <div id="qr-payment" class="mt-3" style="display:none;">
+                            <h6>Quét mã QR để chuyển khoản</h6>
+                            <img src="{{ asset('storage/qr-code.png') }}" alt="Mã QR chuyển khoản" style="max-width: 200px;">
+                            <p class="mt-2"><strong>Ngân hàng:</strong> ABC Bank</p>
+                            <p><strong>Chủ tài khoản:</strong> Nguyễn Văn A</p>
+                            <p><strong>Nội dung:</strong> Thanh toán đơn hàng {{ session('order_code') ?? 'ABC123' }}</p>
+                            <p><strong>Số tiền:</strong> <span id="qr-amount">{{ number_format($menu->price, 0, ',', '.') }} đ</span></p>
                         </div>
                     </div>
+                </div>
+
+                <!-- Nút Đặt hàng -->
+                <div class="row mt-3">
+                    <div class="col-6 text-start">
+                        <button onclick="window.location.href='{{ route('customer.cart') }}'" type="button" class="btn btn-secondary w-100">Quay lại giỏ hàng</button>
+                    </div>
+                    <div class="col-6 text-end">
+                        <button type="submit" class="btn btn-danger w-100">Đặt hàng</button>
+                    </div>
+                </div>
+
+                <!-- Hiệu ứng và xử lý JS -->
+                <script>
+                    // Hiển thị QR khi chọn chuyển khoản
+                    document.querySelectorAll('input[name="payment_option"]').forEach(input => {
+                        input.addEventListener('change', function () {
+                            document.getElementById('qr-payment').style.display = (this.value === 'bank') ? 'block' : 'none';
+                        });
+                    });
+
+                    // Cộng trừ số lượng
+                    document.querySelectorAll('.quantity').forEach(wrapper => {
+                        const minus = wrapper.querySelector('.minus');
+                        const plus = wrapper.querySelector('.plus');
+                        const input = wrapper.querySelector('.quantity-input');
+
+                        minus.addEventListener('click', () => {
+                            let value = parseInt(input.value) || 1;
+                            input.value = (value > 1) ? value - 1 : 1;
+                        });
+
+                        plus.addEventListener('click', () => {
+                            let value = parseInt(input.value) || 1;
+                            input.value = value + 1;
+                        });
+                    });
+
+                    // Hiệu ứng bay vào giỏ hàng
+                    document.querySelectorAll('.add-to-cart').forEach(button => {
+                        button.addEventListener('click', function (e) {
+                            const imgSrc = this.getAttribute('data-img_src');
+                            const cart = document.querySelector('#cart-icon'); // cần có icon giỏ hàng có id="cart-icon"
+
+                            const img = document.createElement('img');
+                            img.src = imgSrc;
+                            img.style.position = 'absolute';
+                            img.style.width = '50px';
+                            img.style.zIndex = '9999';
+                            img.style.top = e.clientY + 'px';
+                            img.style.left = e.clientX + 'px';
+                            img.style.transition = 'all 1s ease';
+
+                            document.body.appendChild(img);
+
+                            const cartRect = cart.getBoundingClientRect();
+                            img.style.top = cartRect.top + 'px';
+                            img.style.left = cartRect.left + 'px';
+                            img.style.opacity = '0.2';
+                            img.style.transform = 'scale(0.1)';
+
+                            setTimeout(() => img.remove(), 1000);
+
+                            // TODO: Ajax thêm vào giỏ hàng
+                            console.log('Đã thêm vào giỏ hàng:', this.dataset.name);
+                        });
+                    });
+                </script>
+
 
                 </div>
             </div>
