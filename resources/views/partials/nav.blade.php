@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg"> 
     <a class="navbar-brand" href="{{ route('home') }}">
-        <img class="logo_light" src="/assets/images/logo_light.png" alt="logo">
-        <img class="logo_dark" src="/assets/images/logo_dark.png" alt="logo">
+        <img class="logo_light" src="assets/images/logo-canteen1.png" alt="logo"height="150px>
+        <img class="logo_dark" src="assets/images/logo-canteen1.png" alt="logo" >
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false"> 
         <span class="ion-android-menu"></span>
@@ -10,7 +10,7 @@
         <ul class="navbar-nav">
             <li>  <a href="{{ route('home') }}" class="nav-link {{ Request::routeIs('home') ? 'active' : '' }}">Trang chủ</a> </li>
             <li>  <a href="{{ route('menu') }}" class="nav-link {{ Request::is('menu*') ? 'active' : '' }}">Thực đơn</a> </li>
-            <li>  <a href="{{ route('blogs') }}" class="nav-link {{ Request::is('blog*') ? 'active' : '' }}">Tìm kiếm</a> </li>
+            <li>  <a href="{{ route('blogs') }}" class="nav-link {{ Request::is('blog*') ? 'active' : '' }}">BLOG</a> </li>
             <li>  <a href="{{ route('about') }}" class="nav-link {{ Request::routeIs('about') ? 'active' : '' }}">Giới thiệu</a> </li>
             <li> <a href="{{ route('contact') }}" class="nav-link {{ Request::routeIs('contact') ? 'active' : '' }}">Liên hệ</a> </li>
             @if (Auth::check())

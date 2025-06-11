@@ -123,7 +123,7 @@
                             @forelse($addresses as $address)
                                 <p>{{ $address->address }}</p>
                             @empty
-                                <p>Không có địa chỉ có sẵn.</p>
+                                <p>Văn Bình-Thường Tín-Hà Nội</p>
                             @endforelse
                         </div>
                     </div>

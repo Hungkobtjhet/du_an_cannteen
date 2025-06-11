@@ -6,11 +6,12 @@
             <div class="row">
                 <div class="col-xl-6 col-md-6 col-sm-12">
                 	<div class="widget">
-                        <div class="footer_logo text-center">
+                        <div class="footer_logo" style="text-align: left; padding-left: 20px;">
                             <a href="{{ route('home') }}">
-                                <img src="{{ asset('blog-images/logo-canteen.png') }}" alt="CANTEEN Logo" style="max-height: 200px;">
+                                <img src="{{ asset('assets/images/logo-canteen1.png') }}" alt="CANTEEN Logo" style="max-height: 150px; height: auto;">
                             </a>
                         </div>
+
                         <p>Tại {{ config('site.name') }}, Chúng tôi tự hào mang đến cho bạn hương vị đích thực của Việt Nam. Các món ăn được chế biến khéo léo và lòng hiếu khách nồng hậu của chúng tôi tạo nên trải nghiệm ẩm thực mà bạn sẽ không bao giờ quên.</p>
                     </div>
                     <div class="widget">
