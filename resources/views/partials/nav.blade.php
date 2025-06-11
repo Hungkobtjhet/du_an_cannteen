@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg"> 
     <a class="navbar-brand" href="{{ route('home') }}">
-        <img class="logo_canteen1" src="assets/images/logo-canteen1.png" alt="logo"height="150px>
+        <img class="logo_canteen1" src="assets/images/logo-canteen1.png" alt="logo" height="150px>
         <img class="logo_canteen1" src="assets/images/logo-canteen1.png" alt="logo" >
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false"> 

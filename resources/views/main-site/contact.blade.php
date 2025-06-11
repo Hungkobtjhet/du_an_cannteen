@@ -157,7 +157,7 @@
                 </div>
 
             </div>
-            
+
         </div>
     </div>
     <!-- END SECTION CONTACT -->
@@ -181,7 +181,7 @@
                                 @forelse($workingHours as $workingHour)
                                     <p>{{ $workingHour->working_hours }}</p>
                                 @empty
-                                    <p>Không có giờ làm việc.</p>
+                                    <p>8h-12h. Từ thứ 2 đến thứ 6.</p>
                                 @endforelse
                             </div>
                         </div>
