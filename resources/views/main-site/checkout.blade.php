@@ -97,145 +97,158 @@
 
  <!-- START SECTION BREADCRUMB -->
 <div class="breadcrumb_section background_bg overlay_bg_50 page_title_light" data-img-src="assets/images/checkout_bg.jpg">
-    <div class="container">
+    <div class="container"><!-- STRART CONTAINER -->
         <div class="row">
-            <div class="col-sm-12 text-center">
-                <h1>Thanh toán</h1>
-                <ol class="breadcrumb justify-content-center">
+            <div class="col-sm-12">
+                <div class="page-title">
+            		<h1>Thanh toán</h1>
+                </div>
+                <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ route('home') }}">Trang chủ</a></li>
                     <li class="breadcrumb-item active">Thanh toán</li>
                 </ol>
             </div>
         </div>
-    </div>
+    </div><!-- END CONTAINER-->
 </div>
+<!-- END SECTION BREADCRUMB -->
 
+<form method="post" action="{{ route('customer.proccess.checkout') }}">
+<!-- CSRF Token for Security -->
+@csrf
+<!-- START SECTION SHOP -->
 <div class="section">
-    <div class="container">
+	<div class="container">
+        @include('partials.message-bag')
 
+    
         <div class="row">
-            <!-- Danh sách sản phẩm -->
+        	<div class="col-lg-6">
+                <div  class="row">
+
+                    <!-- Name -->
+                    <div class="form-group col-md-12">
+                        <input class="form-control" required type="text" name="name" value="{{ old('name') }}" placeholder="Tên *">
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-group col-md-12">
+                        <input class="form-control" required type="email" name="email" value="{{ old('email') }}" placeholder="Email *">
+                    </div>
+
+                    <!-- Phone Number -->
+                    <div class="form-group col-md-12">
+                        <input class="form-control" required type="tel" name="phone_number" value="{{ old('phone_number') }}" placeholder="Số điện thoại *">
+                    </div>
+
+                    <!-- Address -->
+                    <div class="form-group col-md-12">
+                        <input class="form-control" required type="text" name="address" value="{{ old('address') }}" placeholder="Địa chỉ *">
+                    </div>
+
+                    <!-- Additional Information -->
+                    <div class="form-group mb-0 mt-2 col-md-12">
+                        <div class="heading_s1">
+                            <h4>Thông tin bổ sung</h4>
+                        </div>
+                        <textarea rows="4" class="form-control" name="additional_info" placeholder="">{{ old('additional_info') }}</textarea>
+                    </div> 
+                </div>
+            
+            </div>
             <div class="col-lg-6">
-                <h4>Chọn sản phẩm</h4>
-                <div class="product_list">
-                    @foreach($products as $product)
-                    <div class="card mb-3 p-2">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div>
-                                <h6>{{ $product->name }}</h6>
-                                <p class="mb-0">{{ number_format($product->price,0,',','.') }}₫</p>
+                <div class="order_review">
+                    <div class="heading_s1">
+                        <h4>Đơn đặt hàng của bạn</h4>
+                    </div>
+                    <div class="table-responsive order_table">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Sản phẩm</th>
+                                    <th>Tổng thanh toán</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($cart as $item)
+                                <tr>
+                                    <td>{{ $item['name'] }} <span class="product-qty">x {{ $item['quantity'] }}</span></td>
+                                    <td>{!! $site_settings->currency_symbol !!}{{ number_format($item['price'] * $item['quantity'], 2) }}</td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Tổng tiền</th>
+                                    <td class="product-subtotal">{!! $site_settings->currency_symbol !!}{{ number_format($subtotal, 2) }}</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+
+                    <!-- Phương thức thanh toán -->
+                    <div class="payment_method">
+                        <div class="heading_s1">
+                            <h4>Phương thức thanh toán</h4>
+                        </div>
+                        <div class="payment_option">
+
+                            <!-- Thanh toán khi nhận hàng -->
+                            <div class="custome-radio">
+                                <input class="form-check-input" type="radio" name="payment_option" id="cod" value="cod" checked>
+                                <label class="form-check-label" for="cod">Thanh toán khi nhận hàng</label>
                             </div>
-                            <div>
-                                <input type="number" min="1" value="1" class="form-control d-inline-block quantity-input" style="width: 80px;">
-                                <button class="btn btn-success btn-add-to-cart" 
-                                        data-id="{{ $product->id }}" 
-                                        data-name="{{ $product->name }}" 
-                                        data-price="{{ $product->price }}">
-                                    + Thêm
-                                </button>
-                                <button class="btn btn-warning btn-buy-now" 
-                                        data-id="{{ $product->id }}"
-                                        data-name="{{ $product->name }}"
-                                        data-price="{{ $product->price }}">
-                                    Mua ngay
-                                </button>
+
+                            <!-- Chuyển khoản ngân hàng -->
+                            <div class="custome-radio mt-2">
+                                <input class="form-check-input" type="radio" name="payment_option" id="bank" value="bank">
+                                <label class="form-check-label" for="bank">Chuyển khoản ngân hàng</label>
                             </div>
+
+                            <!-- QR chuyển khoản - ẩn mặc định -->
+                            <div id="qr-payment" class="mt-3" style="display:none;">
+                                <h6>Quét mã QR để chuyển khoản</h6>
+                                <img src="{{ asset('storage/qr-code.png') }}" alt="Mã QR chuyển khoản" style="max-width: 200px;">
+                                <p class="mt-2"><strong>Ngân hàng:</strong> ABC Bank</p>
+                                <p><strong>Chủ tài khoản:</strong> Nguyễn Văn A</p>
+                                <p><strong>Nội dung:</strong> Thanh toán đơn hàng {{ session('order_code') ?? 'ABC123' }}</p>
+                            </div>
+
                         </div>
                     </div>
-                    @endforeach
+
+                    <div class="row">
+                        <div class="col-6 text-start">
+                            <button onclick="window.location.href='{{ route('customer.cart') }}'" type="button" class="btn btn-secondary btn-block">Quay lại giỏ hàng</button>
+                        </div>
+                        <div class="col-6 text-end">
+                            <button type="submit" class="btn btn-default btn-block">Đặt hàng</button>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
-            <!-- Form Thanh Toán -->
-            <div class="col-lg-6">
-                <form id="checkout-form" method="POST" action="{{ route('customer.proccess.checkout') }}">
-                    @csrf
-                    <h4>Thông tin nhận hàng</h4>
-                    <input class="form-control mb-2" type="text" name="name" placeholder="Tên *" required>
-                    <input class="form-control mb-2" type="email" name="email" placeholder="Email *" required>
-                    <input class="form-control mb-2" type="tel" name="phone_number" placeholder="Số điện thoại *" required>
-                    <input class="form-control mb-2" type="text" name="address" placeholder="Địa chỉ *" required>
-                    <textarea class="form-control mb-2" name="additional_info" placeholder="Ghi chú đơn hàng (nếu có)"></textarea>
+            <!-- Script để hiển thị QR khi chọn chuyển khoản -->
+            <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const qr = document.getElementById('qr-payment');
+                const codRadio = document.getElementById('cod');
+                const bankRadio = document.getElementById('bank');
 
-                    <h4>Phương thức thanh toán</h4>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="payment_option" id="payment_cod" value="cod" checked>
-                        <label class="form-check-label" for="payment_cod">Thanh toán khi nhận hàng hoặc tại nhà hàng</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="payment_option" id="payment_bank" value="bank">
-                        <label class="form-check-label" for="payment_bank">Chuyển khoản ngân hàng</label>
-                    </div>
+                codRadio.addEventListener('change', function () {
+                    if (this.checked) qr.style.display = 'none';
+                });
 
-                    <!-- QR chuyển khoản -->
-                    <div id="qr-payment" class="mt-3" style="display:none;">
-                        <h6>Quét mã QR để chuyển khoản</h6>
-                        <img src="{{ asset('storage/qr-code.png') }}" alt="Mã QR chuyển khoản" style="max-width: 200px;">
-                        <p class="mb-1"><strong>Ngân hàng:</strong> ABC Bank</p>
-                        <p class="mb-1"><strong>Chủ tài khoản:</strong> Nguyễn Văn A</p>
-                        <p class="mb-1"><strong>Nội dung:</strong> Thanh toán đơn hàng <span id="order-code">###</span></p>
-                        <p><strong>Số tiền:</strong> <span id="total-amount">0</span>₫</p>
-                    </div>
+                bankRadio.addEventListener('change', function () {
+                    if (this.checked) qr.style.display = 'block';
+                });
+            });
+            </script>
 
-                    <button type="submit" class="btn btn-primary w-100 mt-3">Xác nhận đặt hàng</button>
-                </form>
-            </div>
         </div>
     </div>
 </div>
-
-<style>
-.fly-to-cart {
-    position: absolute;
-    width: 50px;
-    z-index: 999;
-    transition: all 1s ease-in-out;
-}
-</style>
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const qr = document.getElementById('qr-payment');
-    const codRadio = document.getElementById('payment_cod');
-    const bankRadio = document.getElementById('payment_bank');
-    const totalAmount = document.getElementById('total-amount');
-
-    codRadio.addEventListener('change', () => qr.style.display = 'none');
-    bankRadio.addEventListener('change', () => qr.style.display = 'block');
-
-    // Thêm vào giỏ hàng với hiệu ứng bay
-    document.querySelectorAll('.btn-add-to-cart').forEach(btn => {
-        btn.addEventListener('click', function () {
-            const img = document.createElement('img');
-            img.src = '/assets/images/icon_cart.png'; // icon giỏ hàng
-            img.className = 'fly-to-cart';
-            img.style.top = (this.getBoundingClientRect().top + window.scrollY) + 'px';
-            img.style.left = (this.getBoundingClientRect().left + window.scrollX) + 'px';
-            document.body.appendChild(img);
-            img.style.top = '20px';
-            img.style.left = '90%';
-            setTimeout(() => img.remove(), 1000);
-
-            // TODO: AJAX thêm vào giỏ hàng backend ở đây
-            alert('Đã thêm vào giỏ hàng (code AJAX xử lý sau)');
-        });
-    });
-
-    // Mua ngay
-    document.querySelectorAll('.btn-buy-now').forEach(btn => {
-        btn.addEventListener('click', function () {
-            const price = parseInt(this.dataset.price);
-            document.getElementById('order-code').innerText = 'MUA-' + Math.floor(Math.random() * 10000);
-            totalAmount.innerText = price.toLocaleString();
-            bankRadio.checked = true;
-            qr.style.display = 'block';
-            window.scrollTo({top: document.getElementById('checkout-form').offsetTop - 50, behavior: 'smooth'});
-        });
-    });
-});
-</script>
-
-
 <!-- END SECTION SHOP -->
 </form>
 

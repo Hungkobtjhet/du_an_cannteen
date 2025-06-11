@@ -151,36 +151,50 @@
                         </ul>
                     </div>
                     <hr />
-                    <div class="cart_extra">
-                        <div class="cart-product-quantity">
-                            <div class="quantity" >
-                                <input type="button" value="-" class="minus">
-                                <input type="text" min="1" name="quantity" value="{{ $quantity > 0 ? $quantity : 1 }}" title="Số lượng" class="qty quantity-input" size="4" data-id="{{ $menu->id }}">
-                                <input type="button" value="+" class="plus">
-                            </div>
-                        </div>
+                   <div class="cart_extra">
 
-                        <div class="cart_btn mt-2 d-flex gap-2">
-                            <!-- Thêm vào giỏ hàng -->
-                            <button 
-                                data-id="{{ $menu->id }}"
-                                data-name="{{ $menu->name }}"
-                                data-price="{{ $menu->price }}" 
-                                data-img_src="{{ asset('storage/' . $menu->image) }}"                                            
-                                type="button"  
-                                class="btn btn-primary rounded-0 add-to-cart flex-fill">
-                                Thêm vào giỏ hàng
-                            </button>
-
-                            <!-- Mua ngay -->
-                            <button 
-                                onclick="window.location.href='{{ route('customer.checkout') }}'" 
-                                type="button" 
-                                class="btn btn-success rounded-0 checkout-btn flex-fill">
-                                Mua ngay
-                            </button>
+                    <!-- Số lượng -->
+                    <div class="cart-product-quantity mb-2">
+                        <div class="quantity d-flex align-items-center">
+                            <button type="button" class="minus btn btn-outline-secondary px-2">-</button>
+                            <input 
+                                type="text" 
+                                min="1" 
+                                name="quantity" 
+                                value="{{ $quantity > 0 ? $quantity : 1 }}" 
+                                title="Số lượng" 
+                                class="qty quantity-input form-control text-center mx-1" 
+                                size="2" 
+                                data-id="{{ $menu->id }}">
+                            <button type="button" class="plus btn btn-outline-secondary px-2">+</button>
                         </div>
                     </div>
+
+                    <!-- Nút chức năng -->
+                    <div class="cart_btn mt-2 d-flex gap-2">
+
+                        <!-- Thêm vào giỏ hàng -->
+                        <button 
+                            data-id="{{ $menu->id }}"
+                            data-name="{{ $menu->name }}"
+                            data-price="{{ $menu->price }}" 
+                            data-img_src="{{ asset('storage/' . $menu->image) }}"                                            
+                            type="button"  
+                            class="btn btn-outline-danger rounded-0 add-to-cart flex-fill d-flex align-items-center justify-content-center">
+                            <i class="fas fa-shopping-cart me-1"></i> Thêm Vào Giỏ Hàng
+                        </button>
+
+                        <!-- Mua ngay -->
+                        <button 
+                            onclick="window.location.href='{{ route('customer.checkout') }}'" 
+                            type="button" 
+                            class="btn btn-danger rounded-0 checkout-btn flex-fill">
+                            Mua Ngay
+                        </button>
+
+                    </div>
+
+                </div>
 
                     </div>
                     <hr />
