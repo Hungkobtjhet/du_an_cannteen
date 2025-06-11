@@ -126,9 +126,12 @@
         	<div class="col-lg-6">	
                 <div class="fancy_style1 overlay_bg_20">
                     <img src="assets/images/about_img5.jpg" alt="about_img5" />
-                    <a href="https://youtu.be/Ok-OcPmMl74?si=xP1PDAresCerqU_O" class="btn btn-ripple ripple_center video_popup animation" data-animation="fadeInUp" data-animation-delay="0.6s"><span class="ripple"><i class="ion-play"></i></span></a>
+                    <a href="https://youtu.be/Ok-OcPmMl74?si=BPFDKOujWPzK50RK" class="btn btn-ripple ripple_center video_popup animation" data-animation="fadeInUp" data-animation-delay="0.6s">
+                        <span class="ripple"><i class="ion-play"></i></span>
+                    </a>
                 </div>
             </div>
+
         </div>
     </div>
 </div>
