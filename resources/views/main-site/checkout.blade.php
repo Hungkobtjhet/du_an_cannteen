@@ -141,11 +141,16 @@
                         <input class="form-control" required type="tel" name="phone_number" value="{{ old('phone_number') }}" placeholder="Số điện thoại *">
                     </div>
 
-                    <!-- Address -->
+                    <!-- City -->
+                    <div class="form-group col-md-6">
+                        <input class="form-control" required type="text" name="city" value="{{ old('city') }}" placeholder="Thành phố *">
+                    </div>
+
+                     <!-- Address -->
                     <div class="form-group col-md-12">
                         <input class="form-control" required type="text" name="address" value="{{ old('address') }}" placeholder="Địa chỉ *">
                     </div>
-
+                    
                     <!-- Additional Information -->
                     <div class="form-group mb-0 mt-2 col-md-12">
                         <div class="heading_s1">
