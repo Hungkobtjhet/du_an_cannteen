@@ -151,6 +151,22 @@
                         <input class="form-control" required type="text" name="address" value="{{ old('address') }}" placeholder="Địa chỉ *">
                     </div>
                     
+                    <!-- State -->
+                    <div class="form-group col-md-6">
+                        <input class="form-control" required type="text" name="state" value="{{ old('state') }}" placeholder="Tình trạng *">
+                    </div>
+
+                    <!-- County (Optional) -->
+                    <div class="form-group col-md-6">
+                        <input class="form-control" type="text" name="county" value="{{ old('county') }}" placeholder="Quận (Tùy chọn)">
+                    </div>
+
+                    <!-- Postcode -->
+                    <div class="form-group col-md-6">
+                        <input class="form-control" required type="text" name="postcode" value="{{ old('postcode') }}" placeholder="Mã bưu điện / ZIP *">
+                    </div>
+
+                    
                     <!-- Additional Information -->
                     <div class="form-group mb-0 mt-2 col-md-12">
                         <div class="heading_s1">
