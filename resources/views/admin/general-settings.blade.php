@@ -519,19 +519,20 @@
                                     </td>
                                 </tr>
             
-                                <!-- Currency Details -->
+                               <!-- Currency Details -->
                                 <tr>
                                     <td><strong>Currency Symbol</strong></td>
                                     <td>
-                                        <input value="{!! $site_settings->currency_symbol ?? '' !!}" required type="text" id="decoded_symbol" class="form-control" placeholder="Currency Symbol" readonly>
+                                        <input value="₫" required type="text" id="decoded_symbol" class="form-control" placeholder="Currency Symbol" readonly>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td><strong>Currency Code</strong></td>
                                     <td>
-                                        <input value="{{ $site_settings->currency_code ?? '' }}" required type="text" id="currency_code" name="currency_code" class="form-control" placeholder="Currency Code" readonly>
+                                        <input value="VND" required type="text" id="currency_code" name="currency_code" class="form-control" placeholder="Currency Code" readonly>
                                     </td>
                                 </tr>
+
                             </tbody>
                         </table>
                     </div>
