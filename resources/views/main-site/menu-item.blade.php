@@ -154,48 +154,48 @@
                    <div class="cart_extra">
 
                     <!-- Số lượng sản phẩm -->
-                    <div class="cart-product-quantity mb-3">
-                        <label for="quantity-{{ $menu->id }}" class="form-label fw-semibold">Số lượng</label>
+                    <div class="cart-product-quantity mb-2">
                         <div class="quantity d-flex align-items-center">
-                            <button type="button" class="btn btn-outline-secondary px-3 minus" aria-label="Giảm số lượng">-</button>
-                            
+                            <button type="button" class="minus btn btn-outline-secondary px-2">-</button>
+
                             <input 
                                 type="number" 
-                                id="quantity-{{ $menu->id }}"
-                                name="quantity" 
                                 min="1" 
+                                name="quantity" 
                                 value="{{ $quantity > 0 ? $quantity : 1 }}" 
-                                class="form-control text-center mx-2 quantity-input" 
+                                title="Số lượng" 
+                                class="qty quantity-input form-control text-center mx-1" 
                                 size="2" 
-                                data-id="{{ $menu->id }}"
-                                aria-label="Số lượng sản phẩm">
+                                data-id="{{ $menu->id }}">
 
-                            <button type="button" class="btn btn-outline-secondary px-3 plus" aria-label="Tăng số lượng">+</button>
+                            <button type="button" class="plus btn btn-outline-secondary px-2">+</button>
                         </div>
                     </div>
 
                     <!-- Nút chức năng -->
-                    <div class="cart_btn mt-3 d-flex gap-2">
+                    <div class="cart_btn mt-2 d-flex gap-2">
+                        
+                        <meta name="csrf-token" content="{{ csrf_token() }}">
 
                         <!-- Thêm vào giỏ hàng -->
                         <button 
-                            type="button"  
-                            class="btn btn-outline-danger rounded-2 flex-fill add-to-cart d-flex align-items-center justify-content-center"
+
                             data-id="{{ $menu->id }}"
                             data-name="{{ $menu->name }}"
-                            data-price="{{ $menu->price }}"
-                            data-img_src="{{ asset('storage/' . $menu->image) }}"
-                        >
-                            <i class="fas fa-shopping-cart me-1"></i> Thêm vào giỏ hàng
+                            data-price="{{ $menu->price }}" 
+                            data-img_src="{{ asset('storage/' . $menu->image) }}"                                            
+                            type="button"  
+                            class="btn btn-outline-danger rounded-0 add-to-cart flex-fill d-flex align-items-center justify-content-center">
+                            <i class="fas fa-shopping-cart me-1"></i> Thêm Vào Giỏ Hàng
                         </button>
 
                         <!-- Mua ngay -->
                         <button 
-                            type="button" 
+
                             onclick="window.location.href='{{ route('customer.checkout') }}'" 
-                            class="btn btn-danger rounded-2 flex-fill checkout-btn d-flex align-items-center justify-content-center"
-                        >
-                            <i class="fas fa-credit-card me-1"></i> Mua ngay
+                            type="button" 
+                            class="btn btn-danger rounded-0 checkout-btn flex-fill d-flex align-items-center justify-content-center">
+                            <i class="fas fa-bolt me-1"></i> Mua Ngay
                         </button>
 
                     </div>
