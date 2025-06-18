@@ -32,7 +32,7 @@
     <!-- TimePicker CSS -->
     <link href="/assets/css/mdtimepicker.min.css" rel="stylesheet">
     <!-- Style CSS -->
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css?v=1">
     <link rel="stylesheet" href="/assets/css/responsive.css">
     <link id="layoutstyle" rel="stylesheet" href="/assets/color/theme-red.css">
 @endpush
@@ -172,7 +172,7 @@
                                     <div class="title">
                                         <h5><a href="{{ route('menu.item', $menu->id) }}">{{ $menu->name }}</a></h5>
                                     </div>
-                                    <p>{!! $site_settings->currency_symbol !!}{{ number_format($menu->price, 2) }}</p>
+                                    <p>{!! $site_settings->currency_symbol !!}{{ number_format($menu->price, 0) }}</p>
                                 </div>
                             </div>
                         </div>

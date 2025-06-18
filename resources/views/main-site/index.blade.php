@@ -241,7 +241,7 @@
                                     <div class="title">
                                         <h5><a href="{{ route('menu.item',$menu->id) }}"> {{ $menu->name }}</a></h5>
                                     </div>
-                                    <p>{!! $site_settings->currency_symbol !!}{{ number_format($menu->price, 2) }}</p>
+                                    <p>{!! $site_settings->currency_symbol !!}{{ number_format($menu->price, 0) }}</p>
                                 </div>                    
                             </div>
                         </div>

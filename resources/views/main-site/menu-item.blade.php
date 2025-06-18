@@ -133,7 +133,7 @@
                     <div class="product_description">
                         <h4 class="product_title"><a href="#">{{ $menu->name }}</a></h4>
                         <div class="product_price"> 
-                            <span class="price">{!! $site_settings->currency_symbol !!}{{ number_format($menu->price, 2) }}</span> 
+                            <span class="price">{!! $site_settings->currency_symbol !!}{{ number_format($menu->price, 0) }}</span> 
                         </div>
                         <div class="rating_wrap">
                                 <div class="rating">
@@ -264,7 +264,7 @@
                                         <div class="title">
                                             <h5><a href="{{ route('menu.item', $relatedMenu->id) }}">{{ $relatedMenu->name }}</a></h5>
                                         </div>
-                                        <p>{!! $site_settings->currency_symbol !!}{{ number_format($relatedMenu->price, 2) }}</p>
+                                        <p>{!! $site_settings->currency_symbol !!}{{ number_format($relatedMenu->price, 0) }}</p>
                                     </div>
                                 </div>
                             </div>
