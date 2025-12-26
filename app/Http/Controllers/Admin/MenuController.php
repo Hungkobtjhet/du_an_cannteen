@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Services\BackupService; // <--- DÒNG QUAN TRỌNG NHẤT
 use App\Models\Menu;
 use App\Models\Category;
 use App\Http\Requests\MenuRequest;
@@ -16,11 +17,9 @@ class MenuController extends Controller
     use AdminViewSharedDataTrait;
     use ImageHandlerTrait;
 
-
     public function __construct()
     {
         $this->shareAdminViewData();
-        
     }
     
     public function index()
@@ -29,6 +28,7 @@ class MenuController extends Controller
         return view('admin.menus', compact('categories'));
     }
 
+    // --- 1. SỬA HÀM STORE (LƯU MỚI) ---
     public function store(MenuRequest $request)
     {
         $validated = $request->validated();
@@ -37,12 +37,20 @@ class MenuController extends Controller
             $validated['image'] = $this->handleImageUpload($validated['image'], "menus");
         }
     
-        Menu::create($validated);
+        // Gán vào biến $menu để gửi đi backup
+        $menu = Menu::create($validated);
     
+        // [BACKUP] Gửi sang Server C#
+        try {
+            (new BackupService())->send($menu, 'CANTEEN_MENU');
+        } catch (\Exception $e) {
+            // Lặng lẽ bỏ qua nếu server backup tắt
+        }
+
         return back()->with('success', 'Menu created successfully!');
     }
     
-
+    // --- 2. SỬA HÀM UPDATE (CẬP NHẬT) ---
     public function update(MenuRequest $request, $id)
     {
         $menu = Menu::findOrFail($id);
@@ -60,28 +68,36 @@ class MenuController extends Controller
         }
     
         $menu->update($validated);
+
+        // [BACKUP] Gửi bản cập nhật sang Server C#
+        try {
+            (new BackupService())->send($menu, 'CANTEEN_MENU');
+        } catch (\Exception $e) {
+            // Lặng lẽ bỏ qua nếu lỗi
+        }
     
         return back()->with('success', 'Menu updated successfully!');
     }
     
-
- 
-
+    // --- 3. SỬA HÀM DESTROY (XÓA) ---
     public function destroy($id)
     {
         $menu = Menu::findOrFail($id);
         $imagePath = storage_path('app/public/' . ltrim($menu->image, '/'));
 
-
-            if (file_exists($imagePath)) {
-                unlink($imagePath); // Delete the image file
-            }
-     
+        if (file_exists($imagePath)) {
+            unlink($imagePath); // Delete the image file
+        }
 
         $menu->delete();
 
+        // [BACKUP] Gửi lệnh xóa sang Server C#
+        try {
+            (new BackupService())->delete($id, 'CANTEEN_MENU');
+        } catch (\Exception $e) {
+            // Lặng lẽ bỏ qua nếu lỗi
+        }
+
         return redirect()->route('admin.menus.index')->with('success', 'Menu deleted successfully!');
     }
-
-
 }
